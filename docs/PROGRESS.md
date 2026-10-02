@@ -1,7 +1,7 @@
 # Guardian Implementation Checklist
 
 - [x] **Phase 0**: Project scaffolding, dependency definitions, centralized YAML rules, logic chain, and delivery tracking.
-- [ ] **Phase 1**: Synthetic data generator (users, transactions, Bangla/Banglish scam texts) & synthetic assumptions documentation.
+- [x] **Phase 1**: Synthetic data generator (users, transactions, Bangla/Banglish scam texts) & synthetic assumptions documentation.
 - [ ] **Phase 2**: Feature engineering pipelines, cohort baselines, and NetworkX mule graph analytics.
 - [ ] **Phase 3**: Machine learning models (Bangla text classifier, LightGBM transaction risk, Isolation Forest anomaly, SHAP explainers) & automated training script.
 - [ ] **Phase 4**: Hybrid decision engine, dynamic friction ladder, prompt-injection defense guard, and factual narrator.
