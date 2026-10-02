@@ -1,0 +1,73 @@
+system:
+  name: "Guardian MFS Scam Shield"
+  version: "1.0.0"
+  institution: "upay"
+  offline_mode: true
+
+risk_weights:
+  txn_ml_score: 0.40
+  text_scam_score: 0.30
+  graph_risk_score: 0.15
+  behavior_anomaly_score: 0.15
+
+vulnerability_policy:
+  high_vulnerability_threshold: 0.65
+  threshold_discount_factor: 0.10 # Lowers risk action threshold by 10% for protected cohorts
+
+friction_ladder:
+  levels:
+    L0:
+      name: "ALLOW"
+      threshold: 0.00
+      requires_delay: false
+      requires_approval: false
+      requires_review: false
+    L1:
+      name: "WARN_INFORMATIVE"
+      threshold: 0.35
+      requires_delay: false
+      requires_approval: false
+      requires_review: false
+    L2:
+      name: "COOL_OFF_DELAY"
+      threshold: 0.60
+      delay_seconds: 600
+      requires_delay: true
+      requires_approval: false
+      requires_review: false
+    L3:
+      name: "TRUSTED_CONTACT_APPROVAL"
+      threshold: 0.78
+      requires_delay: true
+      requires_approval: true
+      requires_review: false
+    L4:
+      name: "HUMAN_ANALYST_REVIEW"
+      threshold: 0.90
+      requires_delay: true
+      requires_approval: false
+      requires_review: true
+
+hard_rules:
+  - id: "RULE_OTP_DRAIN"
+    trigger: "text_class == 'otp_pin_request' and recipient_is_new == true"
+    enforce_min_level: "L2"
+    reason_code: "OTP_PHISHING_NEW_BENEFICIARY"
+  - id: "RULE_MULE_HOP"
+    trigger: "graph_risk > 0.85 and amount_ratio > 3.0"
+    enforce_min_level: "L3"
+    reason_code: "HIGH_RISK_MULE_AFFILIATION"
+
+reason_codes:
+  OTP_PHISHING_NEW_BENEFICIARY:
+    bn: "একটি সম্ভাব্য ওটিপি প্রতারণা বার্তার পর অপরিচিত অ্যাকাউন্টে টাকা পাঠানো হচ্ছে।"
+    en: "Transaction initiated to a new recipient following a suspicious OTP request message."
+  NEW_DEVICE_SPIKE:
+    bn: "নতুন ডিভাইস থেকে সাধারণের চেয়ে বহু গুণ বেশি পরিমাণ টাকা ক্যাশআউট বা সেন্ড হচ্ছে।"
+    en: "Transaction amount is unusually higher than your regular baseline on an unfamiliar device."
+  MULE_NETWORK_SUSPECT:
+    bn: "প্রাপকের অ্যাকাউন্টটি একাধিক অভিযোগপ্রাপ্ত প্রতারক চক্রের সাথে সম্পর্কযুক্ত।"
+    en: "Recipient wallet has transaction graph links to flagged fraudulent mule clusters."
+  SENT_BY_MISTAKE_REVERSAL:
+    bn: "ভুল করে টাকা পাঠানোর দাবি করে তাৎক্ষণিক রিফান্ড চাওয়া সাধারণ প্রতারণার লক্ষণ।"
+    en: "Rapid refund request following a small inbound transfer matches known refund scams."
