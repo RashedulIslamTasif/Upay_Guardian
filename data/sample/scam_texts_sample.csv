@@ -1,0 +1,201 @@
+msg_id,text,label,category,template_split
+MSG_000074,"Customer care theke bolchi, apnar account verify korte 572914 number ta bolun.",1,otp_pin_request,train_family
+MSG_000515,"মা, তোমার ওষুধের জন্য ৳2500 পাঠালাম। ডাক্তার কী বলেছেন আমাকে জানিও।",0,benign,train_family
+MSG_000475,Police complaint registered against your SIM. Clear fine ৳50000 immediately to avoid arrest.,1,urgency_threat,train_family
+MSG_000338,Exclusive Winner! You won a brand new motorcycle. Deposit processing charge ৳500 to claim.,1,fake_prize,train_family
+MSG_000480,Police complaint registered against your SIM. Clear fine ৳7500 immediately to avoid arrest.,1,urgency_threat,train_family
+MSG_000213,Bhai bhul kore ৳2500 send money hoye geche apnar account e. Please eita 01711002233 e refund kore den.,1,sent_by_mistake,train_family
+MSG_000329,অভিনন্দন! আপনি জিতেছেন ৳2500 ক্যাশ প্রাইজ! পুরস্কারের অর্থ পেতে রেজিস্ট্রেশন ফি বাবদ ৳1500 পাঠান।,1,fake_prize,train_family
+MSG_000456,জরুরি ওয়ার্নিং: ২০ মিনিটের মধ্যে বকেয়া পরিশোধ না করলে আপনার বিরুদ্ধে মামলা দায়ের করা হবে।,1,urgency_threat,train_family
+MSG_000078,Alert! Your Wallet Service wallet is suspended. Send verification PIN and code 938102 to reactivate immediately.,1,otp_pin_request,train_family
+MSG_000543,"Dear customer, your utility bill payment of ৳15000 has been processed successfully.",0,benign,train_family
+MSG_000010,আপনার একাউন্ট থেকে ৳2500 কাটার অনুরোধ পেয়েছি। বাতিল করতে ওটিপি কোডটি জানান।,1,otp_pin_request,train_family
+MSG_000342,Congratulations! Apni ৳25000 lottery jitechen. Claim korte registration fee ৳2000 pathan 01711002233 e.,1,fake_prize,train_family
+MSG_000534,Remember that your OTP is private. upay never calls you asking for any PIN or OTP.,0,benign,train_family
+MSG_000359,Congratulations! Apni ৳100000 lottery jitechen. Claim korte registration fee ৳1500 pathan 01855443322 e.,1,fake_prize,train_family
+MSG_000031,Alert! Your ইউপে wallet is suspended. Send verification PIN and code 938102 to reactivate immediately.,1,otp_pin_request,train_family
+MSG_000114,আমরা upay প্রধান কার্যালয় থেকে বলছি। আপনার KYC আপডেট না থাকায় অ্যাকাউন্ট বন্ধ হচ্ছে। যোগাযোগ করুন 01999887766 নম্বরে।,1,fake_agent_support,train_family
+MSG_000056,জরুরি: আপনার ইউপে অ্যাকাউন্ট সাময়িক বন্ধ করা হয়েছে। অবিলম্বে পিন এবং পাঠানো 110482 ওটিপি দিয়ে অ্যাকাউন্ট চালু করুন।,1,otp_pin_request,train_family
+MSG_000524,"Mama baper bari jaoar bhara ৳2500 pathiyechi, peye phone diyo.",0,benign,train_family
+MSG_000034,জরুরি: আপনার MFS অ্যাকাউন্ট সাময়িক বন্ধ করা হয়েছে। অবিলম্বে পিন এবং পাঠানো 572914 ওটিপি দিয়ে অ্যাকাউন্ট চালু করুন।,1,otp_pin_request,train_family
+MSG_000244,"ভাই ভুল করে আপনার নম্বরে ৳50000 চলে গেছে। দয়া করে এই নম্বরে 01855443322 টাকাটা ফেরত পাঠিয়ে দিন, খুব বিপদে আছি।",1,sent_by_mistake,train_family
+MSG_000221,Bhai bhul kore ৳7500 send money hoye geche apnar account e. Please eita 01711002233 e refund kore den.,1,sent_by_mistake,train_family
+MSG_000566,Remember that your OTP is private. upay never calls you asking for any PIN or OTP.,0,benign,train_family
+MSG_000071,Alert! Your Wallet Service wallet is suspended. Send verification PIN and code 110482 to reactivate immediately.,1,otp_pin_request,train_family
+MSG_000322,অভিনন্দন! আপনি জিতেছেন ৳2500 ক্যাশ প্রাইজ! পুরস্কারের অর্থ পেতে রেজিস্ট্রেশন ফি বাবদ ৳2000 পাঠান।,1,fake_prize,train_family
+MSG_000125,আমরা upay প্রধান কার্যালয় থেকে বলছি। আপনার KYC আপডেট না থাকায় অ্যাকাউন্ট বন্ধ হচ্ছে। যোগাযোগ করুন 01300998877 নম্বরে।,1,fake_agent_support,train_family
+MSG_000575,"মা, তোমার ওষুধের জন্য ৳50000 পাঠালাম। ডাক্তার কী বলেছেন আমাকে জানিও।",0,benign,train_family
+MSG_000439,আইনি নোটিশ: আগামী ৩০ মিনিটের মধ্যে ৳50000 জরিমানা প্রদান না করলে আপনার এনআইডি ও অ্যাকাউন্ট বাজেয়াপ্ত হবে।,1,urgency_threat,train_family
+MSG_000402,আইনি নোটিশ: আগামী ৩০ মিনিটের মধ্যে ৳25000 জরিমানা প্রদান না করলে আপনার এনআইডি ও অ্যাকাউন্ট বাজেয়াপ্ত হবে।,1,urgency_threat,train_family
+MSG_000362,Congratulations! Apni ৳100000 lottery jitechen. Claim korte registration fee ৳1000 pathan 01300998877 e.,1,fake_prize,train_family
+MSG_000001,জরুরি: আপনার MFS অ্যাকাউন্ট সাময়িক বন্ধ করা হয়েছে। অবিলম্বে পিন এবং পাঠানো 572914 ওটিপি দিয়ে অ্যাকাউন্ট চালু করুন।,1,otp_pin_request,train_family
+MSG_000472,জরুরি ওয়ার্নিং: ২০ মিনিটের মধ্যে বকেয়া পরিশোধ না করলে আপনার বিরুদ্ধে মামলা দায়ের করা হবে।,1,urgency_threat,train_family
+MSG_000012,Alert! Your ইউপে wallet is suspended. Send verification PIN and code 110482 to reactivate immediately.,1,otp_pin_request,train_family
+MSG_000461,Police complaint registered against your SIM. Clear fine ৳7500 immediately to avoid arrest.,1,urgency_threat,train_family
+MSG_000531,"মা, তোমার ওষুধের জন্য ৳2500 পাঠালাম। ডাক্তার কী বলেছেন আমাকে জানিও।",0,benign,train_family
+MSG_000458,Police complaint registered against your SIM. Clear fine ৳2500 immediately to avoid arrest.,1,urgency_threat,train_family
+MSG_000138,Official Head Office Alert: Send ৳7500 security deposit to agent number 01999887766 to unlock your balance.,1,fake_agent_support,train_family
+MSG_000363,Exclusive Winner! You won a brand new motorcycle. Deposit processing charge ৳1500 to claim.,1,fake_prize,train_family
+MSG_000214,"ভাই ভুল করে আপনার নম্বরে ৳25000 চলে গেছে। দয়া করে এই নম্বরে 01711002233 টাকাটা ফেরত পাঠিয়ে দিন, খুব বিপদে আছি।",1,sent_by_mistake,train_family
+MSG_000572,"Mama baper bari jaoar bhara ৳7500 pathiyechi, peye phone diyo.",0,benign,train_family
+MSG_000019,আপনার একাউন্ট থেকে ৳50000 কাটার অনুরোধ পেয়েছি। বাতিল করতে ওটিপি কোডটি জানান।,1,otp_pin_request,train_family
+MSG_000413,জরুরি ওয়ার্নিং: ২০ মিনিটের মধ্যে বকেয়া পরিশোধ না করলে আপনার বিরুদ্ধে মামলা দায়ের করা হবে।,1,urgency_threat,train_family
+MSG_000226,Bhai bhul kore ৳15000 send money hoye geche apnar account e. Please eita 01522334455 e refund kore den.,1,sent_by_mistake,train_family
+MSG_000111,আমরা upay প্রধান কার্যালয় থেকে বলছি। আপনার KYC আপডেট না থাকায় অ্যাকাউন্ট বন্ধ হচ্ছে। যোগাযোগ করুন 01522334455 নম্বরে।,1,fake_agent_support,train_family
+MSG_000261,Mistakenly transferred ৳25000 to your wallet. Please return the funds urgently to 01522334455.,1,sent_by_mistake,train_family
+MSG_000040,জরুরি: আপনার Wallet Service অ্যাকাউন্ট সাময়িক বন্ধ করা হয়েছে। অবিলম্বে পিন এবং পাঠানো 572914 ওটিপি দিয়ে অ্যাকাউন্ট চালু করুন।,1,otp_pin_request,train_family
+MSG_000404,Police complaint registered against your SIM. Clear fine ৳7500 immediately to avoid arrest.,1,urgency_threat,train_family
+MSG_000560,"Dear customer, your utility bill payment of ৳7500 has been processed successfully.",0,benign,train_family
+MSG_000077,"Customer care theke bolchi, apnar account verify korte 572914 number ta bolun.",1,otp_pin_request,train_family
+MSG_000176,আমরা MFS প্রধান কার্যালয় থেকে বলছি। আপনার KYC আপডেট না থাকায় অ্যাকাউন্ট বন্ধ হচ্ছে। যোগাযোগ করুন 01522334455 নম্বরে।,1,fake_agent_support,train_family
+MSG_000064,জরুরি: আপনার Wallet Service অ্যাকাউন্ট সাময়িক বন্ধ করা হয়েছে। অবিলম্বে পিন এবং পাঠানো 110482 ওটিপি দিয়ে অ্যাকাউন্ট চালু করুন।,1,otp_pin_request,train_family
+MSG_000471,জরুরি ওয়ার্নিং: ২০ মিনিটের মধ্যে বকেয়া পরিশোধ না করলে আপনার বিরুদ্ধে মামলা দায়ের করা হবে।,1,urgency_threat,train_family
+MSG_000421,জরুরি ওয়ার্নিং: ২০ মিনিটের মধ্যে বকেয়া পরিশোধ না করলে আপনার বিরুদ্ধে মামলা দায়ের করা হবে।,1,urgency_threat,train_family
+MSG_000516,"Dear customer, your utility bill payment of ৳2500 has been processed successfully.",0,benign,train_family
+MSG_000535,"Dear customer, your utility bill payment of ৳7500 has been processed successfully.",0,benign,train_family
+MSG_000366,Exclusive Winner! You won a brand new motorcycle. Deposit processing charge ৳1500 to claim.,1,fake_prize,train_family
+MSG_000327,Congratulations! Apni ৳2500 lottery jitechen. Claim korte registration fee ৳1500 pathan 01855443322 e.,1,fake_prize,train_family
+MSG_000103,আমরা upay প্রধান কার্যালয় থেকে বলছি। আপনার KYC আপডেট না থাকায় অ্যাকাউন্ট বন্ধ হচ্ছে। যোগাযোগ করুন 01855443322 নম্বরে।,1,fake_agent_support,train_family
+MSG_000122,আমরা ইউপে প্রধান কার্যালয় থেকে বলছি। আপনার KYC আপডেট না থাকায় অ্যাকাউন্ট বন্ধ হচ্ছে। যোগাযোগ করুন 01522334455 নম্বরে।,1,fake_agent_support,train_family
+MSG_000578,"মা, তোমার ওষুধের জন্য ৳100000 পাঠালাম। ডাক্তার কী বলেছেন আমাকে জানিও।",0,benign,train_family
+MSG_000134,Official Head Office Alert: Send ৳2500 security deposit to agent number 01855443322 to unlock your balance.,1,fake_agent_support,train_family
+MSG_000564,"Dear customer, your utility bill payment of ৳25000 has been processed successfully.",0,benign,train_family
+MSG_000314,Congratulations! Apni ৳15000 lottery jitechen. Claim korte registration fee ৳500 pathan 01522334455 e.,1,fake_prize,train_family
+MSG_000079,আপনার একাউন্ট থেকে ৳15000 কাটার অনুরোধ পেয়েছি। বাতিল করতে ওটিপি কোডটি জানান।,1,otp_pin_request,train_family
+MSG_000158,Official Head Office Alert: Send ৳25000 security deposit to agent number 01300998877 to unlock your balance.,1,fake_agent_support,train_family
+MSG_000275,Mistakenly transferred ৳2500 to your wallet. Please return the funds urgently to 01711002233.,1,sent_by_mistake,train_family
+MSG_000365,Congratulations! Apni ৳15000 lottery jitechen. Claim korte registration fee ৳2000 pathan 01522334455 e.,1,fake_prize,train_family
+MSG_000403,আইনি নোটিশ: আগামী ৩০ মিনিটের মধ্যে ৳25000 জরিমানা প্রদান না করলে আপনার এনআইডি ও অ্যাকাউন্ট বাজেয়াপ্ত হবে।,1,urgency_threat,train_family
+MSG_000069,"Customer care theke bolchi, apnar account verify korte 482910 number ta bolun.",1,otp_pin_request,train_family
+MSG_000073,Alert! Your MFS wallet is suspended. Send verification PIN and code 482910 to reactivate immediately.,1,otp_pin_request,train_family
+MSG_000259,Bhai bhul kore ৳100000 send money hoye geche apnar account e. Please eita 01711002233 e refund kore den.,1,sent_by_mistake,train_family
+MSG_000371,অভিনন্দন! আপনি জিতেছেন ৳15000 ক্যাশ প্রাইজ! পুরস্কারের অর্থ পেতে রেজিস্ট্রেশন ফি বাবদ ৳2000 পাঠান।,1,fake_prize,train_family
+MSG_000080,"Customer care theke bolchi, apnar account verify korte 482910 number ta bolun.",1,otp_pin_request,train_family
+MSG_000249,Bhai bhul kore ৳7500 send money hoye geche apnar account e. Please eita 01855443322 e refund kore den.,1,sent_by_mistake,train_family
+MSG_000169,Official Head Office Alert: Send ৳15000 security deposit to agent number 01522334455 to unlock your balance.,1,fake_agent_support,train_family
+MSG_000175,আমরা MFS প্রধান কার্যালয় থেকে বলছি। আপনার KYC আপডেট না থাকায় অ্যাকাউন্ট বন্ধ হচ্ছে। যোগাযোগ করুন 01855443322 নম্বরে।,1,fake_agent_support,train_family
+MSG_000216,Bhai bhul kore ৳2500 send money hoye geche apnar account e. Please eita 01855443322 e refund kore den.,1,sent_by_mistake,train_family
+MSG_000310,অভিনন্দন! আপনি জিতেছেন ৳25000 ক্যাশ প্রাইজ! পুরস্কারের অর্থ পেতে রেজিস্ট্রেশন ফি বাবদ ৳1000 পাঠান।,1,fake_prize,train_family
+MSG_000576,Remember that your OTP is private. upay never calls you asking for any PIN or OTP.,0,benign,train_family
+MSG_000415,জরুরি ওয়ার্নিং: ২০ মিনিটের মধ্যে বকেয়া পরিশোধ না করলে আপনার বিরুদ্ধে মামলা দায়ের করা হবে।,1,urgency_threat,train_family
+MSG_000076,জরুরি: আপনার ইউপে অ্যাকাউন্ট সাময়িক বন্ধ করা হয়েছে। অবিলম্বে পিন এবং পাঠানো 938102 ওটিপি দিয়ে অ্যাকাউন্ট চালু করুন।,1,otp_pin_request,train_family
+MSG_000522,ভাই রাতের খাবারের বিলের তোমার অংশের ৳7500 পাঠিয়ে দিও যখন ফ্রি হও।,0,benign,train_family
+MSG_000016,"Customer care theke bolchi, apnar account verify korte 572914 number ta bolun.",1,otp_pin_request,train_family
+MSG_000174,"Apnar upaye technical error hoyeche, thik korte helpline 01300998877 e kotha bolun ekhoni.",1,fake_agent_support,train_family
+MSG_000565,Remember that your OTP is private. upay never calls you asking for any PIN or OTP.,0,benign,train_family
+MSG_000020,আপনার একাউন্ট থেকে ৳2500 কাটার অনুরোধ পেয়েছি। বাতিল করতে ওটিপি কোডটি জানান।,1,otp_pin_request,train_family
+MSG_000372,Exclusive Winner! You won a brand new motorcycle. Deposit processing charge ৳2000 to claim.,1,fake_prize,train_family
+MSG_000401,আইনি নোটিশ: আগামী ৩০ মিনিটের মধ্যে ৳100000 জরিমানা প্রদান না করলে আপনার এনআইডি ও অ্যাকাউন্ট বাজেয়াপ্ত হবে।,1,urgency_threat,train_family
+MSG_000057,আপনার একাউন্ট থেকে ৳25000 কাটার অনুরোধ পেয়েছি। বাতিল করতে ওটিপি কোডটি জানান।,1,otp_pin_request,train_family
+MSG_000430,Police complaint registered against your SIM. Clear fine ৳50000 immediately to avoid arrest.,1,urgency_threat,train_family
+MSG_000252,Bhai bhul kore ৳100000 send money hoye geche apnar account e. Please eita 01300998877 e refund kore den.,1,sent_by_mistake,train_family
+MSG_000533,ভাই রাতের খাবারের বিলের তোমার অংশের ৳50000 পাঠিয়ে দিও যখন ফ্রি হও।,0,benign,train_family
+MSG_000263,Bhai bhul kore ৳7500 send money hoye geche apnar account e. Please eita 01300998877 e refund kore den.,1,sent_by_mistake,train_family
+MSG_000278,Mistakenly transferred ৳2500 to your wallet. Please return the funds urgently to 01999887766.,1,sent_by_mistake,train_family
+MSG_000509,ভাই রাতের খাবারের বিলের তোমার অংশের ৳25000 পাঠিয়ে দিও যখন ফ্রি হও।,0,benign,train_family
+MSG_000026,"Customer care theke bolchi, apnar account verify korte 882015 number ta bolun.",1,otp_pin_request,train_family
+MSG_000520,"Dear customer, your utility bill payment of ৳7500 has been processed successfully.",0,benign,train_family
+MSG_000153,আমরা MFS প্রধান কার্যালয় থেকে বলছি। আপনার KYC আপডেট না থাকায় অ্যাকাউন্ট বন্ধ হচ্ছে। যোগাযোগ করুন 01522334455 নম্বরে।,1,fake_agent_support,train_family
+MSG_000269,"ভাই ভুল করে আপনার নম্বরে ৳50000 চলে গেছে। দয়া করে এই নম্বরে 01855443322 টাকাটা ফেরত পাঠিয়ে দিন, খুব বিপদে আছি।",1,sent_by_mistake,train_family
+MSG_000574,"Mama baper bari jaoar bhara ৳25000 pathiyechi, peye phone diyo.",0,benign,train_family
+MSG_000043,আপনার একাউন্ট থেকে ৳2500 কাটার অনুরোধ পেয়েছি। বাতিল করতে ওটিপি কোডটি জানান।,1,otp_pin_request,train_family
+MSG_000441,আইনি নোটিশ: আগামী ৩০ মিনিটের মধ্যে ৳15000 জরিমানা প্রদান না করলে আপনার এনআইডি ও অ্যাকাউন্ট বাজেয়াপ্ত হবে।,1,urgency_threat,train_family
+MSG_000507,Remember that your OTP is private. upay never calls you asking for any PIN or OTP.,0,benign,train_family
+MSG_000161,Official Head Office Alert: Send ৳25000 security deposit to agent number 01711002233 to unlock your balance.,1,fake_agent_support,train_family
+MSG_000558,Remember that your OTP is private. upay never calls you asking for any PIN or OTP.,0,benign,train_family
+MSG_000250,Mistakenly transferred ৳100000 to your wallet. Please return the funds urgently to 01855443322.,1,sent_by_mistake,train_family
+MSG_000233,Bhai bhul kore ৳100000 send money hoye geche apnar account e. Please eita 01300998877 e refund kore den.,1,sent_by_mistake,train_family
+MSG_000549,"মা, তোমার ওষুধের জন্য ৳15000 পাঠালাম। ডাক্তার কী বলেছেন আমাকে জানিও।",0,benign,train_family
+MSG_000023,"Customer care theke bolchi, apnar account verify korte 482910 number ta bolun.",1,otp_pin_request,train_family
+MSG_000523,Remember that your OTP is private. upay never calls you asking for any PIN or OTP.,0,benign,train_family
+MSG_000047,Alert! Your ইউপে wallet is suspended. Send verification PIN and code 110482 to reactivate immediately.,1,otp_pin_request,train_family
+MSG_000147,"Apnar upaye technical error hoyeche, thik korte helpline 01300998877 e kotha bolun ekhoni.",1,fake_agent_support,train_family
+MSG_000501,ভাই রাতের খাবারের বিলের তোমার অংশের ৳2500 পাঠিয়ে দিও যখন ফ্রি হও।,0,benign,train_family
+MSG_000152,আমরা upay প্রধান কার্যালয় থেকে বলছি। আপনার KYC আপডেট না থাকায় অ্যাকাউন্ট বন্ধ হচ্ছে। যোগাযোগ করুন 01711002233 নম্বরে।,1,fake_agent_support,train_family
+MSG_000521,"Dear customer, your utility bill payment of ৳50000 has been processed successfully.",0,benign,train_family
+MSG_000571,ভাই রাতের খাবারের বিলের তোমার অংশের ৳15000 পাঠিয়ে দিও যখন ফ্রি হও।,0,benign,train_family
+MSG_000058,"Customer care theke bolchi, apnar account verify korte 110482 number ta bolun.",1,otp_pin_request,train_family
+MSG_000217,Mistakenly transferred ৳2500 to your wallet. Please return the funds urgently to 01999887766.,1,sent_by_mistake,train_family
+MSG_000351,Congratulations! Apni ৳100000 lottery jitechen. Claim korte registration fee ৳1000 pathan 01300998877 e.,1,fake_prize,train_family
+MSG_000503,"মা, তোমার ওষুধের জন্য ৳7500 পাঠালাম। ডাক্তার কী বলেছেন আমাকে জানিও।",0,benign,train_family
+MSG_000025,Alert! Your MFS wallet is suspended. Send verification PIN and code 572914 to reactivate immediately.,1,otp_pin_request,train_family
+MSG_000018,"Customer care theke bolchi, apnar account verify korte 482910 number ta bolun.",1,otp_pin_request,train_family
+MSG_000067,"Customer care theke bolchi, apnar account verify korte 882015 number ta bolun.",1,otp_pin_request,train_family
+MSG_000477,আইনি নোটিশ: আগামী ৩০ মিনিটের মধ্যে ৳15000 জরিমানা প্রদান না করলে আপনার এনআইডি ও অ্যাকাউন্ট বাজেয়াপ্ত হবে।,1,urgency_threat,train_family
+MSG_000107,আমরা ইউপে প্রধান কার্যালয় থেকে বলছি। আপনার KYC আপডেট না থাকায় অ্যাকাউন্ট বন্ধ হচ্ছে। যোগাযোগ করুন 01522334455 নম্বরে।,1,fake_agent_support,train_family
+MSG_000032,জরুরি: আপনার Wallet Service অ্যাকাউন্ট সাময়িক বন্ধ করা হয়েছে। অবিলম্বে পিন এবং পাঠানো 572914 ওটিপি দিয়ে অ্যাকাউন্ট চালু করুন।,1,otp_pin_request,train_family
+MSG_000105,আমরা Wallet Service প্রধান কার্যালয় থেকে বলছি। আপনার KYC আপডেট না থাকায় অ্যাকাউন্ট বন্ধ হচ্ছে। যোগাযোগ করুন 01711002233 নম্বরে।,1,fake_agent_support,train_family
+MSG_000145,আমরা Wallet Service প্রধান কার্যালয় থেকে বলছি। আপনার KYC আপডেট না থাকায় অ্যাকাউন্ট বন্ধ হচ্ছে। যোগাযোগ করুন 01855443322 নম্বরে।,1,fake_agent_support,train_family
+MSG_000412,Police complaint registered against your SIM. Clear fine ৳50000 immediately to avoid arrest.,1,urgency_threat,train_family
+MSG_000553,Remember that your OTP is private. upay never calls you asking for any PIN or OTP.,0,benign,train_family
+MSG_000555,"Mama baper bari jaoar bhara ৳50000 pathiyechi, peye phone diyo.",0,benign,train_family
+MSG_000115,"Apnar upaye technical error hoyeche, thik korte helpline 01300998877 e kotha bolun ekhoni.",1,fake_agent_support,train_family
+MSG_000416,Police complaint registered against your SIM. Clear fine ৳15000 immediately to avoid arrest.,1,urgency_threat,train_family
+MSG_000222,"ভাই ভুল করে আপনার নম্বরে ৳25000 চলে গেছে। দয়া করে এই নম্বরে 01999887766 টাকাটা ফেরত পাঠিয়ে দিন, খুব বিপদে আছি।",1,sent_by_mistake,train_family
+MSG_000024,Alert! Your upay wallet is suspended. Send verification PIN and code 572914 to reactivate immediately.,1,otp_pin_request,train_family
+MSG_000245,"ভাই ভুল করে আপনার নম্বরে ৳25000 চলে গেছে। দয়া করে এই নম্বরে 01300998877 টাকাটা ফেরত পাঠিয়ে দিন, খুব বিপদে আছি।",1,sent_by_mistake,train_family
+MSG_000309,Exclusive Winner! You won a brand new motorcycle. Deposit processing charge ৳500 to claim.,1,fake_prize,train_family
+MSG_000502,ভাই রাতের খাবারের বিলের তোমার অংশের ৳2500 পাঠিয়ে দিও যখন ফ্রি হও।,0,benign,train_family
+MSG_000006,আপনার একাউন্ট থেকে ৳2500 কাটার অনুরোধ পেয়েছি। বাতিল করতে ওটিপি কোডটি জানান।,1,otp_pin_request,train_family
+MSG_000137,"Apnar upaye technical error hoyeche, thik korte helpline 01855443322 e kotha bolun ekhoni.",1,fake_agent_support,train_family
+MSG_000046,"Customer care theke bolchi, apnar account verify korte 572914 number ta bolun.",1,otp_pin_request,train_family
+MSG_000017,জরুরি: আপনার MFS অ্যাকাউন্ট সাময়িক বন্ধ করা হয়েছে। অবিলম্বে পিন এবং পাঠানো 572914 ওটিপি দিয়ে অ্যাকাউন্ট চালু করুন।,1,otp_pin_request,train_family
+MSG_000552,"Mama baper bari jaoar bhara ৳50000 pathiyechi, peye phone diyo.",0,benign,train_family
+MSG_000452,জরুরি ওয়ার্নিং: ২০ মিনিটের মধ্যে বকেয়া পরিশোধ না করলে আপনার বিরুদ্ধে মামলা দায়ের করা হবে।,1,urgency_threat,train_family
+MSG_000004,Alert! Your upay wallet is suspended. Send verification PIN and code 482910 to reactivate immediately.,1,otp_pin_request,train_family
+MSG_000538,"Dear customer, your utility bill payment of ৳15000 has been processed successfully.",0,benign,train_family
+MSG_000061,জরুরি: আপনার MFS অ্যাকাউন্ট সাময়িক বন্ধ করা হয়েছে। অবিলম্বে পিন এবং পাঠানো 938102 ওটিপি দিয়ে অ্যাকাউন্ট চালু করুন।,1,otp_pin_request,train_family
+MSG_000131,আমরা upay প্রধান কার্যালয় থেকে বলছি। আপনার KYC আপডেট না থাকায় অ্যাকাউন্ট বন্ধ হচ্ছে। যোগাযোগ করুন 01711002233 নম্বরে।,1,fake_agent_support,train_family
+MSG_000368,অভিনন্দন! আপনি জিতেছেন ৳2500 ক্যাশ প্রাইজ! পুরস্কারের অর্থ পেতে রেজিস্ট্রেশন ফি বাবদ ৳500 পাঠান।,1,fake_prize,train_family
+MSG_000311,অভিনন্দন! আপনি জিতেছেন ৳7500 ক্যাশ প্রাইজ! পুরস্কারের অর্থ পেতে রেজিস্ট্রেশন ফি বাবদ ৳2000 পাঠান।,1,fake_prize,train_family
+MSG_000030,জরুরি: আপনার ইউপে অ্যাকাউন্ট সাময়িক বন্ধ করা হয়েছে। অবিলম্বে পিন এবং পাঠানো 482910 ওটিপি দিয়ে অ্যাকাউন্ট চালু করুন।,1,otp_pin_request,train_family
+MSG_000373,অভিনন্দন! আপনি জিতেছেন ৳15000 ক্যাশ প্রাইজ! পুরস্কারের অর্থ পেতে রেজিস্ট্রেশন ফি বাবদ ৳1000 পাঠান।,1,fake_prize,train_family
+MSG_000223,Bhai bhul kore ৳7500 send money hoye geche apnar account e. Please eita 01855443322 e refund kore den.,1,sent_by_mistake,train_family
+MSG_000027,"Customer care theke bolchi, apnar account verify korte 938102 number ta bolun.",1,otp_pin_request,train_family
+MSG_000008,জরুরি: আপনার MFS অ্যাকাউন্ট সাময়িক বন্ধ করা হয়েছে। অবিলম্বে পিন এবং পাঠানো 110482 ওটিপি দিয়ে অ্যাকাউন্ট চালু করুন।,1,otp_pin_request,train_family
+MSG_000537,ভাই রাতের খাবারের বিলের তোমার অংশের ৳50000 পাঠিয়ে দিও যখন ফ্রি হও।,0,benign,train_family
+MSG_000129,আমরা upay প্রধান কার্যালয় থেকে বলছি। আপনার KYC আপডেট না থাকায় অ্যাকাউন্ট বন্ধ হচ্ছে। যোগাযোগ করুন 01300998877 নম্বরে।,1,fake_agent_support,train_family
+MSG_000038,আপনার একাউন্ট থেকে ৳50000 কাটার অনুরোধ পেয়েছি। বাতিল করতে ওটিপি কোডটি জানান।,1,otp_pin_request,train_family
+MSG_000178,"Apnar upaye technical error hoyeche, thik korte helpline 01855443322 e kotha bolun ekhoni.",1,fake_agent_support,train_family
+MSG_000548,"মা, তোমার ওষুধের জন্য ৳50000 পাঠালাম। ডাক্তার কী বলেছেন আমাকে জানিও।",0,benign,train_family
+MSG_000139,Official Head Office Alert: Send ৳15000 security deposit to agent number 01711002233 to unlock your balance.,1,fake_agent_support,train_family
+MSG_000135,Official Head Office Alert: Send ৳25000 security deposit to agent number 01999887766 to unlock your balance.,1,fake_agent_support,train_family
+MSG_000326,অভিনন্দন! আপনি জিতেছেন ৳15000 ক্যাশ প্রাইজ! পুরস্কারের অর্থ পেতে রেজিস্ট্রেশন ফি বাবদ ৳1500 পাঠান।,1,fake_prize,train_family
+MSG_000527,"Mama baper bari jaoar bhara ৳100000 pathiyechi, peye phone diyo.",0,benign,train_family
+MSG_000165,Official Head Office Alert: Send ৳2500 security deposit to agent number 01300998877 to unlock your balance.,1,fake_agent_support,train_family
+MSG_000437,Police complaint registered against your SIM. Clear fine ৳100000 immediately to avoid arrest.,1,urgency_threat,train_family
+MSG_000463,Police complaint registered against your SIM. Clear fine ৳2500 immediately to avoid arrest.,1,urgency_threat,train_family
+MSG_000345,Congratulations! Apni ৳15000 lottery jitechen. Claim korte registration fee ৳500 pathan 01522334455 e.,1,fake_prize,train_family
+MSG_000316,Exclusive Winner! You won a brand new motorcycle. Deposit processing charge ৳1500 to claim.,1,fake_prize,train_family
+MSG_000240,"ভাই ভুল করে আপনার নম্বরে ৳50000 চলে গেছে। দয়া করে এই নম্বরে 01855443322 টাকাটা ফেরত পাঠিয়ে দিন, খুব বিপদে আছি।",1,sent_by_mistake,train_family
+MSG_000529,Remember that your OTP is private. upay never calls you asking for any PIN or OTP.,0,benign,train_family
+MSG_000162,আমরা ইউপে প্রধান কার্যালয় থেকে বলছি। আপনার KYC আপডেট না থাকায় অ্যাকাউন্ট বন্ধ হচ্ছে। যোগাযোগ করুন 01711002233 নম্বরে।,1,fake_agent_support,train_family
+MSG_000433,Police complaint registered against your SIM. Clear fine ৳100000 immediately to avoid arrest.,1,urgency_threat,train_family
+MSG_000068,"Customer care theke bolchi, apnar account verify korte 482910 number ta bolun.",1,otp_pin_request,train_family
+MSG_000234,Mistakenly transferred ৳15000 to your wallet. Please return the funds urgently to 01300998877.,1,sent_by_mistake,train_family
+MSG_000209,Mistakenly transferred ৳7500 to your wallet. Please return the funds urgently to 01711002233.,1,sent_by_mistake,train_family
+MSG_000443,জরুরি ওয়ার্নিং: ২০ মিনিটের মধ্যে বকেয়া পরিশোধ না করলে আপনার বিরুদ্ধে মামলা দায়ের করা হবে।,1,urgency_threat,train_family
+MSG_000236,Bhai bhul kore ৳7500 send money hoye geche apnar account e. Please eita 01522334455 e refund kore den.,1,sent_by_mistake,train_family
+MSG_000268,"ভাই ভুল করে আপনার নম্বরে ৳100000 চলে গেছে। দয়া করে এই নম্বরে 01711002233 টাকাটা ফেরত পাঠিয়ে দিন, খুব বিপদে আছি।",1,sent_by_mistake,train_family
+MSG_000130,Official Head Office Alert: Send ৳25000 security deposit to agent number 01522334455 to unlock your balance.,1,fake_agent_support,train_family
+MSG_000270,Bhai bhul kore ৳100000 send money hoye geche apnar account e. Please eita 01300998877 e refund kore den.,1,sent_by_mistake,train_family
+MSG_000166,"Apnar upaye technical error hoyeche, thik korte helpline 01855443322 e kotha bolun ekhoni.",1,fake_agent_support,train_family
+MSG_000305,অভিনন্দন! আপনি জিতেছেন ৳15000 ক্যাশ প্রাইজ! পুরস্কারের অর্থ পেতে রেজিস্ট্রেশন ফি বাবদ ৳1500 পাঠান।,1,fake_prize,train_family
+MSG_000173,আমরা upay প্রধান কার্যালয় থেকে বলছি। আপনার KYC আপডেট না থাকায় অ্যাকাউন্ট বন্ধ হচ্ছে। যোগাযোগ করুন 01855443322 নম্বরে।,1,fake_agent_support,train_family
+MSG_000476,আইনি নোটিশ: আগামী ৩০ মিনিটের মধ্যে ৳15000 জরিমানা প্রদান না করলে আপনার এনআইডি ও অ্যাকাউন্ট বাজেয়াপ্ত হবে।,1,urgency_threat,train_family
+MSG_000467,Police complaint registered against your SIM. Clear fine ৳50000 immediately to avoid arrest.,1,urgency_threat,train_family
+MSG_000104,আমরা ইউপে প্রধান কার্যালয় থেকে বলছি। আপনার KYC আপডেট না থাকায় অ্যাকাউন্ট বন্ধ হচ্ছে। যোগাযোগ করুন 01300998877 নম্বরে।,1,fake_agent_support,train_family
+MSG_000449,জরুরি ওয়ার্নিং: ২০ মিনিটের মধ্যে বকেয়া পরিশোধ না করলে আপনার বিরুদ্ধে মামলা দায়ের করা হবে।,1,urgency_threat,train_family
+MSG_000206,"ভাই ভুল করে আপনার নম্বরে ৳100000 চলে গেছে। দয়া করে এই নম্বরে 01855443322 টাকাটা ফেরত পাঠিয়ে দিন, খুব বিপদে আছি।",1,sent_by_mistake,train_family
+MSG_000410,জরুরি ওয়ার্নিং: ২০ মিনিটের মধ্যে বকেয়া পরিশোধ না করলে আপনার বিরুদ্ধে মামলা দায়ের করা হবে।,1,urgency_threat,train_family
+MSG_000251,"ভাই ভুল করে আপনার নম্বরে ৳100000 চলে গেছে। দয়া করে এই নম্বরে 01522334455 টাকাটা ফেরত পাঠিয়ে দিন, খুব বিপদে আছি।",1,sent_by_mistake,train_family
+MSG_000075,"Customer care theke bolchi, apnar account verify korte 110482 number ta bolun.",1,otp_pin_request,train_family
+MSG_000358,Congratulations! Apni ৳2500 lottery jitechen. Claim korte registration fee ৳1500 pathan 01855443322 e.,1,fake_prize,train_family
+MSG_000511,"Dear customer, your utility bill payment of ৳15000 has been processed successfully.",0,benign,train_family
+MSG_000272,Mistakenly transferred ৳50000 to your wallet. Please return the funds urgently to 01855443322.,1,sent_by_mistake,train_family
+MSG_000140,"Apnar upaye technical error hoyeche, thik korte helpline 01711002233 e kotha bolun ekhoni.",1,fake_agent_support,train_family
+MSG_000332,Congratulations! Apni ৳2500 lottery jitechen. Claim korte registration fee ৳1500 pathan 01522334455 e.,1,fake_prize,train_family
+MSG_000442,Police complaint registered against your SIM. Clear fine ৳7500 immediately to avoid arrest.,1,urgency_threat,train_family
+MSG_000546,"Mama baper bari jaoar bhara ৳50000 pathiyechi, peye phone diyo.",0,benign,train_family
+MSG_000422,আইনি নোটিশ: আগামী ৩০ মিনিটের মধ্যে ৳50000 জরিমানা প্রদান না করলে আপনার এনআইডি ও অ্যাকাউন্ট বাজেয়াপ্ত হবে।,1,urgency_threat,train_family
+MSG_000306,Exclusive Winner! You won a brand new motorcycle. Deposit processing charge ৳500 to claim.,1,fake_prize,train_family

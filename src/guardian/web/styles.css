@@ -1,0 +1,33 @@
+@layer components {
+  .preset-btn {
+    @apply text-xs bg-slate-900 hover:bg-slate-700 text-slate-200 border border-slate-700 px-3 py-1 rounded-lg transition-all font-medium;
+  }
+  .metric-card {
+    @apply bg-slate-900/90 border border-slate-700/80 rounded-xl p-3 flex flex-col justify-between;
+  }
+  .metric-label {
+    @apply text-[10px] uppercase font-bold text-slate-400 tracking-wider;
+  }
+  .metric-value {
+    @apply text-base font-black font-mono mt-1;
+  }
+  .kpi-card {
+    @apply bg-slate-800/80 border rounded-2xl p-4 flex flex-col shadow-lg;
+  }
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
