@@ -1,12 +1,12 @@
 {
   "model_performance": {
-    "pr_auc": 0.9982,
-    "roc_auc": 1.0,
-    "recall_at_1_percent_capacity": 0.625,
-    "recall_at_2_percent_capacity": 0.9375
+    "pr_auc": 0.989,
+    "roc_auc": 0.9989,
+    "recall_at_1_percent_capacity": 0.4717,
+    "recall_at_2_percent_capacity": 0.9455
   },
   "nlp_unseen_performance": {
-    "macro_f1": 0.7687,
+    "macro_f1": 0.7796,
     "classes": [
       "benign",
       "fake_agent_support",
@@ -18,71 +18,71 @@
   },
   "business_simulation": {
     "guardian_treatment": {
-      "baseline_scam_loss_bdt": 58959.57,
-      "prevented_loss_bdt": 33621.7,
-      "loss_reduction_pct": 57.03,
-      "scams_intervened_count": 5,
-      "total_scam_count": 16,
-      "legit_friction_rate_pct": 0.0,
-      "delayed_legit_txns_count": 0,
-      "delayed_legit_bdt": 0.0,
-      "analyst_queue_cases": 0,
-      "analyst_hours_saved": 0.0
+      "baseline_scam_loss_bdt": 2041280.07,
+      "prevented_loss_bdt": 1057513.95,
+      "loss_reduction_pct": 51.81,
+      "scams_intervened_count": 182,
+      "total_scam_count": 477,
+      "legit_friction_rate_pct": 41.6,
+      "delayed_legit_txns_count": 9162,
+      "delayed_legit_bdt": 7422997.71,
+      "analyst_queue_cases": 9257,
+      "analyst_hours_saved": 925.7
     },
     "rule_only_baseline": {
-      "baseline_scam_loss_bdt": 58959.57,
-      "prevented_loss_bdt": 26243.76,
-      "loss_reduction_pct": 44.51,
-      "scams_intervened_count": 5,
-      "total_scam_count": 16,
-      "legit_friction_rate_pct": 0.27,
-      "delayed_legit_txns_count": 2,
-      "delayed_legit_bdt": 10955.36,
+      "baseline_scam_loss_bdt": 2041280.07,
+      "prevented_loss_bdt": 896587.77,
+      "loss_reduction_pct": 43.92,
+      "scams_intervened_count": 148,
+      "total_scam_count": 477,
+      "legit_friction_rate_pct": 0.04,
+      "delayed_legit_txns_count": 8,
+      "delayed_legit_bdt": 46547.73,
       "analyst_queue_cases": 0,
       "analyst_hours_saved": 0.0
     },
-    "ai_uplift_loss_prevented_bdt": 7377.94,
+    "ai_uplift_loss_prevented_bdt": 160926.18,
     "tradeoff_curve": [
       {
         "threshold": 0.2,
-        "loss_reduction_pct": 95.28,
+        "loss_reduction_pct": 95.53,
         "legit_friction_rate_pct": 0.0,
-        "prevented_loss_bdt": 56175.55,
-        "analyst_cases": 15
+        "prevented_loss_bdt": 1950021.99,
+        "analyst_cases": 468
       },
       {
         "threshold": 0.35,
-        "loss_reduction_pct": 95.28,
+        "loss_reduction_pct": 95.52,
         "legit_friction_rate_pct": 0.0,
-        "prevented_loss_bdt": 56175.55,
-        "analyst_cases": 15
+        "prevented_loss_bdt": 1949773.74,
+        "analyst_cases": 468
       },
       {
         "threshold": 0.5,
-        "loss_reduction_pct": 95.28,
+        "loss_reduction_pct": 95.49,
         "legit_friction_rate_pct": 0.0,
-        "prevented_loss_bdt": 56175.55,
-        "analyst_cases": 15
+        "prevented_loss_bdt": 1949291.03,
+        "analyst_cases": 468
       },
       {
         "threshold": 0.65,
-        "loss_reduction_pct": 95.15,
+        "loss_reduction_pct": 95.43,
         "legit_friction_rate_pct": 0.0,
-        "prevented_loss_bdt": 56099.16,
-        "analyst_cases": 14
+        "prevented_loss_bdt": 1947954.87,
+        "analyst_cases": 464
       },
       {
         "threshold": 0.75,
-        "loss_reduction_pct": 87.05,
+        "loss_reduction_pct": 87.45,
         "legit_friction_rate_pct": 0.0,
-        "prevented_loss_bdt": 51322.37,
+        "prevented_loss_bdt": 1785125.13,
         "analyst_cases": 0
       },
       {
         "threshold": 0.85,
-        "loss_reduction_pct": 69.47,
+        "loss_reduction_pct": 69.56,
         "legit_friction_rate_pct": 0.0,
-        "prevented_loss_bdt": 40961.34,
+        "prevented_loss_bdt": 1419881.08,
         "analyst_cases": 0
       }
     ]
@@ -91,70 +91,70 @@
     "by_age_group": [
       {
         "segment": "18-25",
-        "sample_size": 217,
-        "false_positive_rate_pct": 0.0,
-        "detection_recall_pct": 33.33,
-        "overall_friction_pct": 0.92
+        "sample_size": 6553,
+        "false_positive_rate_pct": 42.42,
+        "detection_recall_pct": 27.83,
+        "overall_friction_pct": 42.16
       },
       {
         "segment": "26-40",
-        "sample_size": 315,
-        "false_positive_rate_pct": 0.0,
-        "detection_recall_pct": 0.0,
-        "overall_friction_pct": 0.0
+        "sample_size": 9181,
+        "false_positive_rate_pct": 41.14,
+        "detection_recall_pct": 16.0,
+        "overall_friction_pct": 41.07
       },
       {
         "segment": "41-60",
-        "sample_size": 143,
-        "false_positive_rate_pct": 0.0,
-        "detection_recall_pct": 50.0,
-        "overall_friction_pct": 1.4
+        "sample_size": 4470,
+        "false_positive_rate_pct": 41.46,
+        "detection_recall_pct": 28.49,
+        "overall_friction_pct": 40.96
       },
       {
         "segment": "60+",
-        "sample_size": 75,
-        "false_positive_rate_pct": 0.0,
-        "detection_recall_pct": 16.67,
-        "overall_friction_pct": 1.33
+        "sample_size": 2296,
+        "false_positive_rate_pct": 41.39,
+        "detection_recall_pct": 58.79,
+        "overall_friction_pct": 42.64
       }
     ],
     "by_region": [
       {
         "segment": "rural",
-        "sample_size": 331,
-        "false_positive_rate_pct": 0.0,
-        "detection_recall_pct": 40.0,
-        "overall_friction_pct": 1.21
+        "sample_size": 10463,
+        "false_positive_rate_pct": 40.84,
+        "detection_recall_pct": 40.7,
+        "overall_friction_pct": 40.84
       },
       {
         "segment": "urban",
-        "sample_size": 419,
-        "false_positive_rate_pct": 0.0,
-        "detection_recall_pct": 16.67,
-        "overall_friction_pct": 0.24
+        "sample_size": 12037,
+        "false_positive_rate_pct": 42.24,
+        "detection_recall_pct": 29.25,
+        "overall_friction_pct": 42.13
       }
     ],
     "by_tenure": [
       {
         "segment": "New (<90d)",
-        "sample_size": 46,
-        "false_positive_rate_pct": 0.0,
-        "detection_recall_pct": 75.0,
-        "overall_friction_pct": 6.52
+        "sample_size": 1620,
+        "false_positive_rate_pct": 42.16,
+        "detection_recall_pct": 50.0,
+        "overall_friction_pct": 42.47
       },
       {
         "segment": "Mid (90-365d)",
-        "sample_size": 176,
-        "false_positive_rate_pct": 0.0,
-        "detection_recall_pct": 40.0,
-        "overall_friction_pct": 1.14
+        "sample_size": 5115,
+        "false_positive_rate_pct": 41.26,
+        "detection_recall_pct": 39.55,
+        "overall_friction_pct": 41.21
       },
       {
         "segment": "Established (>365d)",
-        "sample_size": 528,
-        "false_positive_rate_pct": 0.0,
-        "detection_recall_pct": 0.0,
-        "overall_friction_pct": 0.0
+        "sample_size": 15765,
+        "false_positive_rate_pct": 41.66,
+        "detection_recall_pct": 34.77,
+        "overall_friction_pct": 41.54
       }
     ]
   }
