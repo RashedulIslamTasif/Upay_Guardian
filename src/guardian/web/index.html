@@ -4,38 +4,37 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="google" content="notranslate">
-  <title>Guardian — AI Scam Shield | upay</title>
+  <title>Upay_Guardian</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <link rel="stylesheet" href="/styles.css?v=6.0">
+  <link rel="stylesheet" href="/styles.css?v=7.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col font-sans notranslate" translate="no">
+<body id="appBody" class="bg-slate-900 text-slate-100 min-h-screen flex flex-col font-sans notranslate transition-colors duration-200" translate="no">
 
-  <!-- Header Banner with Language Switcher -->
+  <!-- Header Banner -->
   <header class="bg-slate-800/90 border-b border-slate-700 sticky top-0 z-50 backdrop-blur-md px-4 py-3 flex items-center justify-between">
     <div class="flex items-center space-x-3">
       <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-amber-500 to-yellow-400 flex items-center justify-center text-slate-950 font-black text-xl shadow-lg">
-        G
+        UG
       </div>
       <div>
-        <h1 class="text-lg font-bold tracking-tight text-white flex items-center gap-2">
-          Guardian <span class="text-xs bg-yellow-400/20 text-yellow-300 border border-yellow-400/40 px-2 py-0.5 rounded-full font-mono">upay Shield</span>
+        <h1 class="text-xl font-black tracking-tight text-amber-400">
+          Upay_Guardian
         </h1>
-        <p class="text-xs text-slate-400" data-i18n="headerSubtitle">দুর্বল ও প্রবীণ গ্রাহকদের জন্য এআই স্ক্যাম সুরক্ষা (Track 07 Open Innovation)</p>
       </div>
     </div>
     
     <div class="flex items-center space-x-3">
-      <!-- Language Switcher Button -->
-      <button id="langToggleBtn" onclick="toggleLanguage()" class="px-3.5 py-1.5 rounded-lg border-2 border-amber-400 bg-amber-400/10 hover:bg-amber-400/20 text-amber-300 text-xs font-black flex items-center gap-2 transition-all shadow-md">
-        <i class="fa-solid fa-language text-base"></i> <span id="langBtnText">English</span>
+      <!-- Day / Night Mood Toggle Button -->
+      <button id="themeToggleBtn" onclick="toggleTheme()" class="px-3 py-1.5 rounded-lg border border-slate-600 bg-slate-800/80 hover:bg-slate-700 text-slate-200 text-xs font-bold flex items-center gap-1.5 transition-all shadow">
+        <span id="themeBtnIcon">☀️</span> <span id="themeBtnText">দিন</span>
       </button>
 
-      <span class="hidden md:inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-emerald-950 text-emerald-300 border border-emerald-800">
-        <span class="w-2 h-2 rounded-full bg-emerald-400 mr-1.5 animate-pulse"></span>
-        <span data-i18n="badgeZeroPii">জিরো প্রোডাকশন PII • সিন্থেটিক মোড</span>
-      </span>
+      <!-- Language Switcher Button -->
+      <button id="langToggleBtn" onclick="toggleLanguage()" class="px-3.5 py-1.5 rounded-lg border-2 border-amber-400 bg-amber-400/10 hover:bg-amber-400/20 text-amber-300 text-xs font-black flex items-center gap-2 transition-all shadow">
+        <i class="fa-solid fa-language text-base"></i> <span id="langBtnText">English</span>
+      </button>
 
       <div class="flex bg-slate-950 p-1 rounded-lg border border-slate-700 text-xs">
         <button id="tabBtnCustomer" onclick="switchView('customer')" class="px-3 py-1.5 rounded-md font-semibold bg-amber-500 text-slate-950 shadow">
@@ -103,7 +102,7 @@
               <span class="w-7 h-7 rounded-lg bg-yellow-400 text-slate-950 font-black flex items-center justify-center text-xs">upay</span>
               <span class="text-sm font-semibold text-slate-200" data-i18n="phoneHeaderTitle">টাকা পাঠান (Send Money)</span>
             </div>
-            <span class="text-xs text-slate-400" id="phoneBalance" data-i18n="phoneBalance">ব্যালেন্স: ৳২৪,৫০০</span>
+            <span class="text-xs text-slate-400" id="phoneBalance">ব্যালেন্স: ৳২৪,৫০০</span>
           </div>
 
           <!-- Dynamic Guardian Banner -->
@@ -118,7 +117,7 @@
             <p id="bannerMessageSub" class="text-[10px] text-slate-400 italic mt-0.5"></p>
           </div>
 
-          <form id="txnForm" onsubmit="event.preventDefault(); submitTransaction();" class="mt-4 space-y-3">
+          <form id="txnForm" onsubmit="event.preventDefault(); submitTransaction(true);" class="mt-4 space-y-3">
             <div>
               <label class="block text-[11px] font-semibold text-slate-400 mb-1" data-i18n="lblRecipient">প্রাপকের মোবাইল/ওয়ালেট নম্বর</label>
               <input type="text" id="custRecipient" required value="01799882211" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-amber-400 font-mono">
@@ -332,10 +331,19 @@
 
   </main>
 
-  <footer class="border-t border-slate-800 px-6 py-3 text-center text-xs text-slate-500">
-    AI DEV FEST 2026 • DIU CPC × upay AI Hackathon • Track 07 Open Innovation • Guardian Safe MFS
+  <!-- Clean Floating Toast Notification Container -->
+  <div id="toastNotification" class="hidden fixed bottom-6 right-6 z-50 p-4 rounded-2xl shadow-2xl border max-w-sm transition-all duration-300 flex items-start gap-3">
+    <div id="toastIcon" class="text-2xl mt-0.5"></div>
+    <div>
+      <div id="toastTitle" class="font-bold text-sm"></div>
+      <div id="toastDesc" class="text-xs mt-0.5 opacity-90 leading-relaxed"></div>
+    </div>
+  </div>
+
+  <footer class="border-t border-slate-800/60 px-6 py-2 text-center text-[11px] text-slate-500">
+    Upay_Guardian • Empowering Safe Digital Financial Services
   </footer>
 
-  <script src="/app.js?v=6.0"></script>
+  <script src="/app.js?v=7.0"></script>
 </body>
 </html>
