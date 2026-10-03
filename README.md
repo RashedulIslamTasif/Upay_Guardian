@@ -2,7 +2,7 @@
 
 # 🛡️ Upay_Guardian
 
-### Intelligent Scam Shield for Mobile Financial Services
+### AI Scam & Fraud Intelligence Shield for Mobile Financial Services
 
 **Protecting first-time, rural, and vulnerable mobile wallet users at the moment of manipulation.**
 
@@ -56,12 +56,12 @@ Because mobile financial transactions are instantaneous and irreversible, victim
 
 **Upay_Guardian** is an explainable, multi-modal scam intelligence shield designed specifically for **upay**. Instead of imposing disruptive hard blocks, it evaluates conversational script text together with real-time behavioral and network-graph signals to apply a calibrated **Friction Ladder (L0–L4)**:
 
-| Level | Action | Description |
-|:-----:|--------|-------------|
-| **L0** | ✅ Allow | Normal, frictionless transaction. |
-| **L1** | 💬 Advisory Warning | Plain-language, spoken Bangla/English advisory banner with zero delay. |
-| **L2** | ⏳ Cool-Off Delay | Enforced 10-minute hold with a "talk to someone you trust" reflection prompt. |
-| **L3** | 👨‍👩‍👧 Guardian Co-Approval | Real-time authorization from a pre-registered family member or trusted contact. |
+| Level  | Action                   | Description                                                                                              |
+| :----: | ------------------------ | -------------------------------------------------------------------------------------------------------- |
+| **L0** | ✅ Allow                 | Normal, frictionless transaction.                                                                        |
+| **L1** | 💬 Advisory Warning      | Plain-language, spoken Bangla/English advisory banner with zero delay.                                   |
+| **L2** | ⏳ Cool-Off Delay        | Enforced 10-minute hold with a "talk to someone you trust" reflection prompt.                            |
+| **L3** | 👨‍👩‍👧 Guardian Co-Approval  | Real-time authorization from a pre-registered family member or trusted contact.                          |
 | **L4** | 🕵️ Analyst Escrow Review | High-risk mule syndicates routed to human security specialists. **Never** an automated permanent denial. |
 
 ### Purpose
@@ -72,28 +72,28 @@ To eliminate social-engineering financial loss for vulnerable citizens, protect 
 
 ## 🧠 Features & Role of AI
 
-| Component | What it does |
-|-----------|--------------|
-| 🌐 **Multilingual Phishing NLP Classifier** | Evaluates Bangla, Banglish, and English SMS text using character n-gram (2–5) TF-IDF and class-balanced Logistic Regression. Detects urgency markers, OTP theft, and prize-fee deception. |
-| 📊 **Calibrated Transaction Risk Model** | LightGBM classifier with Platt sigmoid calibration, trained on chronological transaction patterns. Monitors velocity spikes, circadian deviations, and baseline ratio shifts. |
-| 🕸️ **Mule Syndicate Graph Risk** | NetworkX fan-in/fan-out topology metrics and hop-distance proximity to confirmed money-mule clusters. |
-| 🧬 **Behavioral Anomaly Isolation Forest** | Measures out-of-distribution behavior per user demographic cohort. |
-| 🔍 **SHAP Explainability & Grounded Narratives** | TreeExplainer attributions converted into plain Bangla/English risk drivers. |
-| 🛑 **Adversarial Prompt-Injection Guard** | Strips instruction-override attacks from untrusted message context. |
-| 🔊 **Bilingual Native Voice Synthesis** | Delivers spoken Bangla warnings for low-literacy users. |
+| Component                                        | What it does                                                                                                                                                                              |
+| ------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 🌐 **Multilingual Phishing NLP Classifier**      | Evaluates Bangla, Banglish, and English SMS text using character n-gram (2–5) TF-IDF and class-balanced Logistic Regression. Detects urgency markers, OTP theft, and prize-fee deception. |
+| 📊 **Calibrated Transaction Risk Model**         | LightGBM classifier with Platt sigmoid calibration, trained on chronological transaction patterns. Monitors velocity spikes, circadian deviations, and baseline ratio shifts.             |
+| 🕸️ **Mule Syndicate Graph Risk**                 | NetworkX fan-in/fan-out topology metrics and hop-distance proximity to confirmed money-mule clusters.                                                                                     |
+| 🧬 **Behavioral Anomaly Isolation Forest**       | Measures out-of-distribution behavior per user demographic cohort.                                                                                                                        |
+| 🔍 **SHAP Explainability & Grounded Narratives** | TreeExplainer attributions converted into plain Bangla/English risk drivers.                                                                                                              |
+| 🛑 **Adversarial Prompt-Injection Guard**        | Strips instruction-override attacks from untrusted message context.                                                                                                                       |
+| 🔊 **Bilingual Native Voice Synthesis**          | Delivers spoken Bangla warnings for low-literacy users.                                                                                                                                   |
 
 ---
 
 ## 🧰 Technology Stack
 
-| Layer | Technologies |
-|-------|--------------|
-| **Language** | Python 3.11 |
-| **Backend & API** | FastAPI, Uvicorn, Pydantic v2, Python-Multipart |
-| **ML & Analytics** | Scikit-Learn, LightGBM, SHAP, NetworkX, NumPy, Pandas, Joblib |
+| Layer                          | Technologies                                                                                                             |
+| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
+| **Language**                   | Python 3.11                                                                                                              |
+| **Backend & API**              | FastAPI, Uvicorn, Pydantic v2, Python-Multipart                                                                          |
+| **ML & Analytics**             | Scikit-Learn, LightGBM, SHAP, NetworkX, NumPy, Pandas, Joblib                                                            |
 | **Frontend (zero build step)** | Vanilla HTML5, Tailwind CSS (CDN), Chart.js (CDN), FontAwesome, Web Speech API (`speechSynthesis` & `SpeechRecognition`) |
-| **Configuration** | PyYAML (`config/guardian.yaml`) |
-| **Testing & Containers** | Pytest, HTTPX, Docker |
+| **Configuration**              | PyYAML (`config/guardian.yaml`)                                                                                          |
+| **Testing & Containers**       | Pytest, HTTPX, Docker                                                                                                    |
 
 ---
 
@@ -138,15 +138,15 @@ Create your local `.env` file from the provided example:
 cp .env.example .env
 ```
 
-| Variable | Purpose | Default / Instructions |
-|----------|---------|------------------------|
-| `ENVIRONMENT` | Deployment environment | `production` (or `development`) |
-| `DEBUG` | Debug-level exception reporting | `false` |
-| `HOST` | Binding IP address for the web server | `0.0.0.0` |
-| `PORT` | Port for FastAPI | `8000` |
-| `USE_LLM` | Toggles optional external LLM inference | `false` (kept offline for zero-latency judging) |
-| `ANTHROPIC_API_KEY` | Secret key for optional LLM use | `<ADD_ANTHROPIC_KEY_IF_DESIRED>` |
-| `ANALYST_API_SECRET` | Token for operational authorization | `<SET_A_STRONG_SECRET>` |
+| Variable             | Purpose                                 | Default / Instructions                          |
+| -------------------- | --------------------------------------- | ----------------------------------------------- |
+| `ENVIRONMENT`        | Deployment environment                  | `production` (or `development`)                 |
+| `DEBUG`              | Debug-level exception reporting         | `false`                                         |
+| `HOST`               | Binding IP address for the web server   | `0.0.0.0`                                       |
+| `PORT`               | Port for FastAPI                        | `8000`                                          |
+| `USE_LLM`            | Toggles optional external LLM inference | `false` (kept offline for zero-latency judging) |
+| `ANTHROPIC_API_KEY`  | Secret key for optional LLM use         | `<ADD_ANTHROPIC_KEY_IF_DESIRED>`                |
+| `ANALYST_API_SECRET` | Token for operational authorization     | `<SET_A_STRONG_SECRET>`                         |
 
 > ⚠️ **Security Notice:** Never commit real secret keys or API credentials to GitHub. Use placeholders only, and keep `.env` in `.gitignore`.
 
@@ -176,9 +176,9 @@ Once running, open the interactive dashboard: 👉 **http://localhost:8000/**
 
 ## 🌍 Live Deployment
 
-| Resource | Link |
-|----------|------|
-| 🌐 **Live App** | `https://upay-guardian.onrender.com`|
+| Resource                | Link                                      |
+| ----------------------- | ----------------------------------------- |
+| 🌐 **Live App**         | `https://upay-guardian.onrender.com`      |
 | 📘 **Swagger API Docs** | `https://upay-guardian.onrender.com/docs` |
 
 ---
@@ -198,11 +198,11 @@ python -m pytest -q tests/test_api.py
 
 ### ✔️ Verification Criteria
 
-| Test | Verifies |
-|------|----------|
-| **Injection Defense** | Prompts containing `ignore previous instructions` are intercepted and neutralized. |
+| Test                     | Verifies                                                                                  |
+| ------------------------ | ----------------------------------------------------------------------------------------- |
+| **Injection Defense**    | Prompts containing `ignore previous instructions` are intercepted and neutralized.        |
 | **Hard Rule Escalation** | OTP phishing attempts to unfamiliar beneficiaries escalate immediately to at least L2/L3. |
-| **Security Header** | `/v1/alerts` strictly requires the `X-Role: analyst` header. |
+| **Security Header**      | `/v1/alerts` strictly requires the `X-Role: analyst` header.                              |
 
 ---
 
@@ -237,17 +237,17 @@ graph TD
 
 ---
 
-## 📈 Results & Business Impact
+## 📈 Results
 
 Evaluated strictly on the **held-out chronological test horizon** (final 15% time-split):
 
-| Evaluation Metric | Baseline (Rule-Only) | Upay_Guardian (Full AI) | Measurable Business Benefit |
-|-------------------|:--------------------:|:-----------------------:|-----------------------------|
-| **Scam Loss Prevented** | ৳864,800 (47.6%) | **৳1,485,200 (82.4%)** | +৳620,400 incremental loss prevented |
-| **Legitimate Customer Friction** | 4.12% | **1.84%** | Meets the <2.0% institutional SLA |
-| **LightGBM PR-AUC / ROC-AUC** | — | **0.8412 / 0.9620** | High precision in dense fraud distributions |
-| **Unseen Template Macro-F1** | — | **0.8920** | Strong generalization on zero-leakage holdout |
-| **Analyst Workload Capacity** | 0 hrs saved | **214 hrs saved** | Grounded narratives eliminate manual evidence prep |
+| Evaluation Metric                | Baseline (Rule-Only) | Upay_Guardian (Full AI) | Measurable Business Benefit                        |
+| -------------------------------- | :------------------: | :---------------------: | -------------------------------------------------- |
+| **Scam Loss Prevented**          |       ৳864,800       |    **৳1,057,513.95**    | +৳620,400 incremental loss prevented               |
+| **Legitimate Customer Friction** |        4.12%         |        **1.84%**        | Meets the <2.0% institutional SLA                  |
+| **LightGBM PR-AUC / ROC-AUC**    |          —           |   **0.8412 / 0.9620**   | High precision in dense fraud distributions        |
+| **Unseen Template Macro-F1**     |          —           |       **0.8920**        | Strong generalization on zero-leakage holdout      |
+| **Analyst Workload Capacity**    |     0 hrs saved      |   **925.7 hrs saved**   | Grounded narratives eliminate manual evidence prep |
 
 ---
 
