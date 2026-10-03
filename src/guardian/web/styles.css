@@ -16,7 +16,7 @@
   }
 }
 
-/* Custom scrollbars */
+/* Custom scrollbar and base aesthetics */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
