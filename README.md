@@ -10,7 +10,6 @@
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.110+-009688.svg?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
 [![LightGBM](https://img.shields.io/badge/LightGBM-4.3+-brightgreen.svg)](https://lightgbm.readthedocs.io/)
 [![Privacy](https://img.shields.io/badge/Privacy-100%25%20Synthetic-emerald.svg)](docs/SYNTHETIC_ASSUMPTIONS.md)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 [Overview](#-project-overview) •
 [Features](#-features--role-of-ai) •
@@ -111,8 +110,8 @@ To eliminate social-engineering financial loss for vulnerable citizens, protect 
 
 ```bash
 # Step 1: Clone the repository
-git clone https://github.com/your-org/upay-guardian.git
-cd upay-guardian
+git clone https://github.com/RashedulIslamTasif/Upay_Guardian
+cd Upay_Guardian
 
 # Step 2: Create a virtual environment
 python -m venv venv
@@ -179,8 +178,8 @@ Once running, open the interactive dashboard: 👉 **http://localhost:8000/**
 
 | Resource | Link |
 |----------|------|
-| 🌐 **Live App** | `<ADD_DEPLOYED_URL_HERE>` (e.g. `https://upay-guardian.onrender.com` or Hugging Face Spaces) |
-| 📘 **Swagger API Docs** | `<ADD_DEPLOYED_URL_HERE>/docs` |
+| 🌐 **Live App** | `https://upay-guardian.onrender.com`|
+| 📘 **Swagger API Docs** | `https://upay-guardian.onrender.com/docs` |
 
 ---
 
