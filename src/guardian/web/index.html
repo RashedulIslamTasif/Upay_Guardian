@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="bn" translate="no" class="notranslate">
+<html lang="en" translate="no" class="notranslate">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +7,7 @@
   <title>Upay_Guardian</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <link rel="stylesheet" href="/styles.css?v=7.0">
+  <link rel="stylesheet" href="/styles.css?v=9.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body id="appBody" class="bg-slate-900 text-slate-100 min-h-screen flex flex-col font-sans notranslate transition-colors duration-200" translate="no">
@@ -22,29 +22,30 @@
         <h1 class="text-xl font-black tracking-tight text-amber-400">
           Upay_Guardian
         </h1>
+        <p class="text-xs text-slate-400" data-i18n="headerSubtitle">AI Scam & Fraud Intelligence Shield (Track 01: Trust & Risk Intelligence)</p>
       </div>
     </div>
     
     <div class="flex items-center space-x-3">
       <!-- Day / Night Mood Toggle Button -->
       <button id="themeToggleBtn" onclick="toggleTheme()" class="px-3 py-1.5 rounded-lg border border-slate-600 bg-slate-800/80 hover:bg-slate-700 text-slate-200 text-xs font-bold flex items-center gap-1.5 transition-all shadow">
-        <span id="themeBtnIcon">☀️</span> <span id="themeBtnText">দিন</span>
+        <span id="themeBtnIcon">☀️</span> <span id="themeBtnText">Day</span>
       </button>
 
-      <!-- Language Switcher Button -->
+      <!-- Language Switcher Button (Defaults to inviting Bangla toggle) -->
       <button id="langToggleBtn" onclick="toggleLanguage()" class="px-3.5 py-1.5 rounded-lg border-2 border-amber-400 bg-amber-400/10 hover:bg-amber-400/20 text-amber-300 text-xs font-black flex items-center gap-2 transition-all shadow">
-        <i class="fa-solid fa-language text-base"></i> <span id="langBtnText">English</span>
+        <i class="fa-solid fa-language text-base"></i> <span id="langBtnText">বাংলা</span>
       </button>
 
       <div class="flex bg-slate-950 p-1 rounded-lg border border-slate-700 text-xs">
         <button id="tabBtnCustomer" onclick="switchView('customer')" class="px-3 py-1.5 rounded-md font-semibold bg-amber-500 text-slate-950 shadow">
-          <i class="fa-solid fa-mobile-screen mr-1"></i> <span data-i18n="tabCustText">কাস্টমার অ্যাপ</span>
+          <i class="fa-solid fa-mobile-screen mr-1"></i> <span data-i18n="tabCustText">Customer App</span>
         </button>
         <button id="tabBtnAnalyst" onclick="switchView('analyst')" class="px-3 py-1.5 rounded-md font-semibold text-slate-300 hover:text-white">
-          <i class="fa-solid fa-shield-halved mr-1"></i> <span data-i18n="tabAnalystText">অ্যানালিস্ট কনসোল</span>
+          <i class="fa-solid fa-shield-halved mr-1"></i> <span data-i18n="tabAnalystText">Analyst Console</span>
         </button>
         <button id="tabBtnImpact" onclick="switchView('impact')" class="px-3 py-1.5 rounded-md font-semibold text-slate-300 hover:text-white">
-          <i class="fa-solid fa-chart-line mr-1"></i> <span data-i18n="tabImpactText">ইমপ্যাক্ট ও অর্থনীতি</span>
+          <i class="fa-solid fa-chart-line mr-1"></i> <span data-i18n="tabImpactText">Impact & Economics</span>
         </button>
       </div>
     </div>
@@ -57,36 +58,36 @@
     <section class="mb-6 bg-slate-800/90 border-2 border-amber-500/40 rounded-2xl p-3.5 shadow-xl">
       <div class="flex items-center justify-between mb-2">
         <span class="text-xs font-bold text-amber-400 uppercase tracking-wider flex items-center gap-1.5" data-i18n="presetsToolbarTitle">
-          <i class="fa-solid fa-wand-magic-sparkles text-amber-300"></i> এক-ক্লিকে টেস্ট সিনারিও নির্বাচন করুন:
+          <i class="fa-solid fa-wand-magic-sparkles text-amber-300"></i> One-Click Demo Scenarios:
         </span>
         <span id="voiceStatusBadge" class="text-[11px] text-slate-400 font-mono flex items-center gap-1" data-i18n="voiceStatusBadge">
-          <i class="fa-solid fa-microphone text-emerald-400"></i> ভয়েস ইঞ্জিন সক্রিয়
+          <i class="fa-solid fa-microphone text-emerald-400"></i> Native Speech Engine Active
         </span>
       </div>
       <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-2 text-xs">
         <button id="btnScenario_otp" onclick="loadScenario('otp')" class="px-3 py-2 rounded-xl border border-slate-700 bg-slate-900 hover:bg-slate-700 text-slate-200 font-medium text-left transition-all">
-          <div class="font-bold text-rose-400" data-i18n="title_otp">১. ওটিপি প্রতারণা</div>
-          <div class="text-[10px] text-slate-400" data-i18n="sub_otp">অ্যাকাউন্ট চুরির চেষ্টা (L3)</div>
+          <div class="font-bold text-rose-400" data-i18n="title_otp">1. OTP Fraud</div>
+          <div class="text-[10px] text-slate-400" data-i18n="sub_otp">OTP Account Theft (L3)</div>
         </button>
         <button id="btnScenario_mistake" onclick="loadScenario('mistake')" class="px-3 py-2 rounded-xl border border-slate-700 bg-slate-900 hover:bg-slate-700 text-slate-200 font-medium text-left transition-all">
-          <div class="font-bold text-amber-400" data-i18n="title_mistake">২. রিফান্ড ফাঁদ</div>
-          <div class="text-[10px] text-slate-400" data-i18n="sub_mistake">ভুল টাকা পাঠানোর ফাঁদ (L2)</div>
+          <div class="font-bold text-amber-400" data-i18n="title_mistake">2. Refund Trap</div>
+          <div class="text-[10px] text-slate-400" data-i18n="sub_mistake">Sent by Mistake Trap (L2)</div>
         </button>
         <button id="btnScenario_prize" onclick="loadScenario('prize')" class="px-3 py-2 rounded-xl border border-slate-700 bg-slate-900 hover:bg-slate-700 text-slate-200 font-medium text-left transition-all">
-          <div class="font-bold text-yellow-400" data-i18n="title_prize">৩. লটারি পুরস্কার ফি</div>
-          <div class="text-[10px] text-slate-400" data-i18n="sub_prize">ভুয়া পুরস্কার ফি দাবি (L1)</div>
+          <div class="font-bold text-yellow-400" data-i18n="title_prize">3. Lottery Fee</div>
+          <div class="text-[10px] text-slate-400" data-i18n="sub_prize">Fake Prize Fee (L1)</div>
         </button>
         <button id="btnScenario_mule" onclick="loadScenario('mule')" class="px-3 py-2 rounded-xl border border-slate-700 bg-slate-900 hover:bg-slate-700 text-slate-200 font-medium text-left transition-all">
-          <div class="font-bold text-purple-400" data-i18n="title_mule">৪. মিউল সিন্ডিকেট</div>
-          <div class="text-[10px] text-slate-400" data-i18n="sub_mule">পাচারকারী চক্র (L4)</div>
+          <div class="font-bold text-purple-400" data-i18n="title_mule">4. Mule Cluster</div>
+          <div class="text-[10px] text-slate-400" data-i18n="sub_mule">Mule Syndicate (L4)</div>
         </button>
         <button id="btnScenario_legit" onclick="loadScenario('legit')" class="px-3 py-2 rounded-xl border border-emerald-600/50 bg-emerald-950/30 hover:bg-emerald-900/50 text-emerald-200 font-medium text-left transition-all">
-          <div class="font-bold text-emerald-400" data-i18n="title_legit">৫. নিয়মিত বাসা ভাড়া</div>
-          <div class="text-[10px] text-slate-400" data-i18n="sub_legit">স্বাভাবিক নিরাপদ লেনদেন (L0)</div>
+          <div class="font-bold text-emerald-400" data-i18n="title_legit">5. Legit Rent</div>
+          <div class="text-[10px] text-slate-400" data-i18n="sub_legit">Standard Transfer (L0)</div>
         </button>
         <button id="btnScenario_injection" onclick="loadScenario('injection')" class="px-3 py-2 rounded-xl border border-indigo-600/50 bg-indigo-950/30 hover:bg-indigo-900/50 text-indigo-200 font-medium text-left transition-all">
-          <div class="font-bold text-indigo-400" data-i18n="title_injection">৬. এআই আক্রমণ পরীক্ষা</div>
-          <div class="text-[10px] text-slate-400" data-i18n="sub_injection">বাইপাস প্রতিরোধ প্রমাণ</div>
+          <div class="font-bold text-indigo-400" data-i18n="title_injection">6. AI Injection</div>
+          <div class="text-[10px] text-slate-400" data-i18n="sub_injection">Adversarial Defense</div>
         </button>
       </div>
     </section>
@@ -100,9 +101,9 @@
           <div class="flex items-center justify-between pb-3 border-b border-slate-800">
             <div class="flex items-center space-x-2">
               <span class="w-7 h-7 rounded-lg bg-yellow-400 text-slate-950 font-black flex items-center justify-center text-xs">upay</span>
-              <span class="text-sm font-semibold text-slate-200" data-i18n="phoneHeaderTitle">টাকা পাঠান (Send Money)</span>
+              <span class="text-sm font-semibold text-slate-200" data-i18n="phoneHeaderTitle">Send Money</span>
             </div>
-            <span class="text-xs text-slate-400" id="phoneBalance">ব্যালেন্স: ৳২৪,৫০০</span>
+            <span class="text-xs text-slate-400 font-semibold" id="phoneBalance">Balance: ৳24,500</span>
           </div>
 
           <!-- Dynamic Guardian Banner -->
@@ -110,7 +111,7 @@
             <div class="flex items-center justify-between mb-1">
               <span id="bannerBadge" class="font-bold px-2 py-0.5 rounded text-[11px] uppercase tracking-wide"></span>
               <button onclick="speakWarningAudio()" class="text-slate-900 bg-amber-400 hover:bg-amber-300 font-bold px-2.5 py-1 rounded flex items-center gap-1 shadow">
-                <i class="fa-solid fa-volume-high"></i> <span data-i18n="btnListenVoice">শুনুন (Voice)</span>
+                <i class="fa-solid fa-volume-high"></i> <span data-i18n="btnListenVoice">Listen (Voice)</span>
               </button>
             </div>
             <p id="bannerMessageMain" class="font-medium text-slate-100 mt-1 leading-relaxed text-[12px]"></p>
@@ -119,20 +120,20 @@
 
           <form id="txnForm" onsubmit="event.preventDefault(); submitTransaction(true);" class="mt-4 space-y-3">
             <div>
-              <label class="block text-[11px] font-semibold text-slate-400 mb-1" data-i18n="lblRecipient">প্রাপকের মোবাইল/ওয়ালেট নম্বর</label>
+              <label class="block text-[11px] font-semibold text-slate-400 mb-1" data-i18n="lblRecipient">Recipient Wallet Number</label>
               <input type="text" id="custRecipient" required value="01799882211" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-amber-400 font-mono">
             </div>
 
             <div>
-              <label class="block text-[11px] font-semibold text-slate-400 mb-1" data-i18n="lblAmount">টাকার পরিমাণ (টাকা BDT)</label>
+              <label class="block text-[11px] font-semibold text-slate-400 mb-1" data-i18n="lblAmount">Amount (BDT)</label>
               <input type="number" id="custAmount" required value="14500" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-amber-400 font-mono">
             </div>
 
             <div>
               <div class="flex justify-between items-center mb-1">
-                <label class="text-[11px] font-semibold text-slate-400" data-i18n="lblMsgContext">আগত সন্দেহজনক মেসেজ বা SMS</label>
-                <button type="button" onclick="startSpeechRecognition()" class="text-[10px] text-amber-400 hover:underline flex items-center gap-1">
-                  <i class="fa-solid fa-microphone"></i> <span data-i18n="btnDictate">মুখে বলুন</span>
+                <label class="text-[11px] font-semibold text-slate-400" data-i18n="lblMsgContext">Message Context (Scam Text)</label>
+                <button type="button" onclick="startSpeechRecognition()" class="text-[10px] text-amber-400 hover:underline flex items-center gap-1 font-semibold">
+                  <i class="fa-solid fa-microphone"></i> <span data-i18n="btnDictate">Voice Dictation</span>
                 </button>
               </div>
               <textarea id="custMessage" rows="3" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-2 text-xs text-white focus:outline-none focus:border-amber-400"></textarea>
@@ -140,18 +141,18 @@
 
             <div class="bg-slate-900/60 p-2.5 rounded-lg border border-slate-800 text-[11px] space-y-1">
               <div class="flex justify-between">
-                <span class="text-slate-400" data-i18n="lblUserCohortTitle">ইউজার প্রোফাইল:</span>
-                <span class="text-amber-300 font-semibold" id="lblUserCohort">বয়োবৃদ্ধ / গ্রামীণ (ঝুঁকি স্কোর: ০.৮৫)</span>
+                <span class="text-slate-400" data-i18n="lblUserCohortTitle">User Profile:</span>
+                <span class="text-amber-300 font-semibold" id="lblUserCohort">Elderly / Rural (Vulnerability: 0.85)</span>
               </div>
               <div class="flex justify-between">
-                <span class="text-slate-400" data-i18n="lblTypicalAmtTitle">স্বাভাবিক লেনদেন মাত্রা:</span>
-                <span class="text-slate-300" id="lblTypicalAmt">৳১,৫০০</span>
+                <span class="text-slate-400" data-i18n="lblTypicalAmtTitle">Typical Baseline:</span>
+                <span class="text-slate-300 font-semibold" id="lblTypicalAmt">৳1,500</span>
               </div>
             </div>
 
             <button type="submit" id="btnSubmitTxn" class="w-full bg-gradient-to-r from-amber-500 to-yellow-400 text-slate-950 font-bold py-2.5 rounded-lg text-sm shadow-md hover:from-amber-400 hover:to-yellow-300 active:scale-[0.99] transition-all flex items-center justify-center gap-2">
               <span id="btnSpinner" class="hidden"><i class="fa-solid fa-circle-notch fa-spin"></i></span>
-              <span id="btnText" data-i18n="btnText">এগিয়ে যান (টাকা পাঠান)</span>
+              <span id="btnText" data-i18n="btnText">Transfer Now</span>
             </button>
           </form>
 
@@ -160,14 +161,14 @@
             <div class="w-14 h-14 rounded-full bg-amber-500/20 text-amber-400 border border-amber-500/50 flex items-center justify-center text-2xl mb-3">
               <i class="fa-solid fa-user-shield"></i>
             </div>
-            <h3 class="text-sm font-bold text-white mb-1" data-i18n="modalTitle">অভিভাবকের অনুমতি প্রয়োজন (L3)</h3>
-            <p class="text-xs text-slate-300 mb-4 px-2" data-i18n="modalDesc">আপনার সুরক্ষার্থে লেনদেনটি সম্পন্ন করতে নিবন্ধিত বিশ্বস্ত অভিভাবকের সম্মতি চাওয়া হয়েছে।</p>
+            <h3 class="text-sm font-bold text-white mb-1" data-i18n="modalTitle">Trusted Contact Co-Approval Required (L3)</h3>
+            <p class="text-xs text-slate-300 mb-4 px-2" data-i18n="modalDesc">For your account security, this transaction requires authorization from your registered guardian/trusted contact.</p>
             <div class="w-full space-y-2">
               <button onclick="resolveTrustedContact('approve')" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-2 rounded-lg text-xs" data-i18n="btnModalApprove">
-                <i class="fa-solid fa-check mr-1"></i> অভিভাবক অনুমোদন দিন (Approve)
+                <i class="fa-solid fa-check mr-1"></i> Guardian Approve (Simulate)
               </button>
               <button onclick="resolveTrustedContact('deny')" class="w-full bg-rose-600 hover:bg-rose-500 text-white font-bold py-2 rounded-lg text-xs" data-i18n="btnModalReject">
-                <i class="fa-solid fa-ban mr-1"></i> বাতিল করুন (Reject)
+                <i class="fa-solid fa-ban mr-1"></i> Reject Transfer (Simulate)
               </button>
             </div>
           </div>
@@ -177,37 +178,37 @@
       <!-- Decision Trace Sidecard -->
       <div class="lg:col-span-7 bg-slate-800/80 border border-slate-700 rounded-2xl p-6 shadow-xl">
         <h2 class="text-base font-bold text-white mb-4 flex items-center justify-between">
-          <span><i class="fa-solid fa-microchip text-amber-400 mr-2"></i> <span data-i18n="traceHeaderTitle">Guardian AI ডিসিশন ট্রেস</span></span>
-          <span id="decisionIdBadge" class="text-xs font-mono text-slate-400">Standby</span>
+          <span><i class="fa-solid fa-microchip text-amber-400 mr-2"></i> <span data-i18n="traceHeaderTitle">Guardian AI Decision Trace</span></span>
+          <span id="decisionIdBadge" class="text-xs font-mono text-slate-400 font-semibold">Standby</span>
         </h2>
 
         <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
           <div class="bg-slate-900 border border-slate-700 rounded-xl p-3">
-            <span class="text-[10px] uppercase font-bold text-slate-400" data-i18n="cardCompositeRisk">সমষ্টিগত ঝুঁকি</span>
+            <span class="text-[10px] uppercase font-bold text-slate-400" data-i18n="cardCompositeRisk">Composite Risk</span>
             <div id="traceCompositeRisk" class="text-lg font-black font-mono text-amber-400 mt-1">0.00</div>
           </div>
           <div class="bg-slate-900 border border-slate-700 rounded-xl p-3">
-            <span class="text-[10px] uppercase font-bold text-slate-400" data-i18n="cardLadder">নিরাপত্তা ধাপ</span>
+            <span class="text-[10px] uppercase font-bold text-slate-400" data-i18n="cardLadder">Assigned Ladder</span>
             <div id="traceLadder" class="text-lg font-black font-mono text-white mt-1">L0</div>
           </div>
           <div class="bg-slate-900 border border-slate-700 rounded-xl p-3">
-            <span class="text-[10px] uppercase font-bold text-slate-400" data-i18n="cardTextScore">ঝুঁকি নির্ধারণের মাত্রা</span>
+            <span class="text-[10px] uppercase font-bold text-slate-400" data-i18n="cardTextScore">Text Scam Score</span>
             <div id="traceTextScore" class="text-lg font-black font-mono text-slate-300 mt-1">0.00</div>
           </div>
           <div class="bg-slate-900 border border-slate-700 rounded-xl p-3">
-            <span class="text-[10px] uppercase font-bold text-slate-400" data-i18n="cardGraphRisk">পাচারকারী চক্রের ঝুঁকি</span>
+            <span class="text-[10px] uppercase font-bold text-slate-400" data-i18n="cardGraphRisk">Mule Graph Risk</span>
             <div id="traceGraphRisk" class="text-lg font-black font-mono text-slate-300 mt-1">0.00</div>
           </div>
         </div>
 
-        <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2" data-i18n="shapTitle">SHAP ফিচারের প্রভাব ও ঝুঁকি কারণ:</h3>
+        <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2" data-i18n="shapTitle">SHAP Feature Drivers & Explanations:</h3>
         <div id="shapReasonsContainer" class="space-y-2 mb-6 text-xs text-slate-400 italic">
-          অপেক্ষা করছে...
+          Standby...
         </div>
 
-        <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2" data-i18n="rulesTitle">সুনির্দিষ্ট নিয়মের ধারা:</h3>
+        <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2" data-i18n="rulesTitle">Deterministic Rule Traces:</h3>
         <div id="ruleTracesContainer" class="p-3 bg-slate-950/80 rounded-xl border border-slate-700/60 font-mono text-xs text-amber-300 space-y-1">
-          <div>// সুনির্দিষ্ট নিয়মের ধারা অপেক্ষা করছে</div>
+          <div>// Rule engine standby</div>
         </div>
       </div>
     </div>
@@ -218,42 +219,42 @@
         <div class="lg:col-span-5 bg-slate-800/80 border border-slate-700 rounded-2xl p-5 shadow-xl flex flex-col">
           <div class="flex justify-between items-center mb-4">
             <h2 class="text-sm font-bold text-white flex items-center gap-2" data-i18n="analystQueueHeader">
-              <i class="fa-solid fa-list-check text-amber-400"></i> L4 এসক্রো পর্যালোচনা তালিকা
+              <i class="fa-solid fa-list-check text-amber-400"></i> L4 Escrow Review Queue
             </h2>
-            <button onclick="fetchAlertsQueue()" class="text-xs bg-slate-700 hover:bg-slate-600 px-2.5 py-1 rounded-md text-slate-200">
-              <i class="fa-solid fa-rotate mr-1"></i> <span data-i18n="btnRefreshQueue">রিফ্রেশ</span>
+            <button onclick="fetchAlertsQueue()" class="text-xs bg-slate-700 hover:bg-slate-600 px-2.5 py-1 rounded-md text-slate-200 font-semibold">
+              <i class="fa-solid fa-rotate mr-1"></i> <span data-i18n="btnRefreshQueue">Refresh</span>
             </button>
           </div>
           <div id="alertsQueueList" class="space-y-2 max-h-[500px] overflow-y-auto pr-1 text-xs">
-            <div class="text-center py-10 text-slate-500">রিভিউ করার জন্য কোনো সক্রিয় সতর্কবার্তা নেই।</div>
+            <div class="text-center py-10 text-slate-500 font-semibold">No active alerts requiring manual triage.</div>
           </div>
         </div>
 
         <div class="lg:col-span-7 bg-slate-800/80 border border-slate-700 rounded-2xl p-5 shadow-xl flex flex-col space-y-4">
           <div class="flex justify-between items-center border-b border-slate-700 pb-3">
             <div>
-              <h3 class="text-sm font-bold text-white" id="analystSelectedTitle" data-i18n="analystSelectedTitle">কিউ থেকে একটি কেস সিলেক্ট করুন</h3>
-              <p class="text-xs text-slate-400" id="analystSelectedSub" data-i18n="analystSelectedSub">এমএল প্রমাণাদি, মিউল নেটওয়ার্ক লিংক এবং গ্রাউন্ড ট্রুথ পর্যবেক্ষণ করুন</p>
+              <h3 class="text-sm font-bold text-white" id="analystSelectedTitle" data-i18n="analystSelectedTitle">Select a Case from the Queue</h3>
+              <p class="text-xs text-slate-400" id="analystSelectedSub" data-i18n="analystSelectedSub">Review ML evidence, mule network links, and factual narratives</p>
             </div>
             <div id="analystActionButtons" class="hidden space-x-2">
-              <button onclick="resolveCurrentAlert('confirmed_scam')" class="px-3 py-1.5 bg-rose-600 hover:bg-rose-500 text-white rounded-lg text-xs font-bold">
-                <i class="fa-solid fa-triangle-exclamation mr-1"></i> <span data-i18n="btnConfirmScam">কনফার্ম স্ক্যাম</span>
+              <button onclick="resolveCurrentAlert('confirmed_scam')" class="px-3 py-1.5 bg-rose-600 hover:bg-rose-500 text-white rounded-lg text-xs font-bold shadow">
+                <i class="fa-solid fa-triangle-exclamation mr-1"></i> <span data-i18n="btnConfirmScam">Confirm Scam</span>
               </button>
-              <button onclick="resolveCurrentAlert('false_positive')" class="px-3 py-1.5 bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg text-xs font-bold">
-                <i class="fa-solid fa-circle-check mr-1"></i> <span data-i18n="btnFalsePositive">ফলস পজিটিভ</span>
+              <button onclick="resolveCurrentAlert('false_positive')" class="px-3 py-1.5 bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg text-xs font-bold shadow">
+                <i class="fa-solid fa-circle-check mr-1"></i> <span data-i18n="btnFalsePositive">False Positive</span>
               </button>
             </div>
           </div>
 
           <div>
-            <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1" data-i18n="narrativeSectionTitle">প্রমাণভিত্তিক তদন্ত সারসংক্ষেপ:</h4>
+            <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1" data-i18n="narrativeSectionTitle">Grounded Investigation Summary:</h4>
             <div id="analystNarrativeBox" class="p-3 bg-slate-950 rounded-xl border border-slate-700 text-xs font-mono text-slate-200 leading-relaxed whitespace-pre-line">
-              পর্যালোচনা তালিকা থেকে একটি কেস সিলেক্ট করুন।
+              Select an alert above to inspect the audit narrative and entity graph.
             </div>
           </div>
 
           <div>
-            <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1" data-i18n="graphSectionTitle">পাচারকারী চক্রের গঠন (NetworkX Export):</h4>
+            <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1" data-i18n="graphSectionTitle">Mule Syndicate Topology (NetworkX Export):</h4>
             <div class="bg-slate-950 border border-slate-700 rounded-xl p-3 h-64 flex items-center justify-center relative">
               <canvas id="graphCanvas" class="w-full h-full"></canvas>
             </div>
@@ -266,33 +267,33 @@
     <div id="viewImpact" class="hidden space-y-6">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
         <div class="bg-slate-800/80 border border-emerald-500/40 rounded-2xl p-4 flex flex-col shadow-lg">
-          <span class="text-xs text-slate-400" data-i18n="kpiTitle1">স্ক্যাম প্রতিরোধ (BDT)</span>
+          <span class="text-xs text-slate-400 font-semibold" data-i18n="kpiTitle1">Scam Loss Prevented</span>
           <span id="kpiLossPrevented" class="text-xl md:text-2xl font-black text-emerald-400 mt-1">৳1,485,200</span>
-          <span id="kpiLossReductionPct" class="text-[11px] text-emerald-300 font-semibold" data-i18n="kpiLossReductionPct">৮২.৪% আর্থিক ক্ষতি রোধ</span>
+          <span id="kpiLossReductionPct" class="text-[11px] text-emerald-300 font-semibold" data-i18n="kpiLossReductionPct">82.4% Loss Reduction</span>
         </div>
         <div class="bg-slate-800/80 border border-blue-500/40 rounded-2xl p-4 flex flex-col shadow-lg">
-          <span class="text-xs text-slate-400" data-i18n="kpiTitle2">সাধারণ নিয়মের চেয়ে AI এর লাভ</span>
+          <span class="text-xs text-slate-400 font-semibold" data-i18n="kpiTitle2">AI Uplift Over Simple Rules</span>
           <span id="kpiAiUplift" class="text-xl md:text-2xl font-black text-blue-400 mt-1">৳620,400</span>
-          <span class="text-[11px] text-blue-300 font-semibold" data-i18n="kpiUpliftSub">+৩৪.৮% বাড়তি সাশ্রয়</span>
+          <span class="text-[11px] text-blue-300 font-semibold" data-i18n="kpiUpliftSub">+34.8% Incremental Value</span>
         </div>
         <div class="bg-slate-800/80 border border-amber-500/40 rounded-2xl p-4 flex flex-col shadow-lg">
-          <span class="text-xs text-slate-400" data-i18n="kpiTitle3">সাধারণ গ্রাহকের বিলম্ব হার</span>
+          <span class="text-xs text-slate-400 font-semibold" data-i18n="kpiTitle3">Legitimate Customer Friction</span>
           <span id="kpiLegitFriction" class="text-xl md:text-2xl font-black text-amber-400 mt-1">1.84%</span>
-          <span class="text-[11px] text-slate-400" data-i18n="kpiFrictionSub">&lt;২.০% টার্গেটের মধ্যে</span>
+          <span class="text-[11px] text-slate-400 font-semibold" data-i18n="kpiFrictionSub">&lt;2.0% SLA Target</span>
         </div>
         <div class="bg-slate-800/80 border border-purple-500/40 rounded-2xl p-4 flex flex-col shadow-lg">
-          <span class="text-xs text-slate-400" data-i18n="kpiTitle4">তদন্তকারী দলের সময় সাশ্রয়</span>
+          <span class="text-xs text-slate-400 font-semibold" data-i18n="kpiTitle4">Analyst Capacity Saved</span>
           <span id="kpiHoursSaved" class="text-xl md:text-2xl font-black text-purple-400 mt-1">214 hrs</span>
-          <span class="text-[11px] text-purple-300 font-semibold" data-i18n="kpiHoursSub">স্বয়ংক্রিয় কেস ট্রায়াজ</span>
+          <span class="text-[11px] text-purple-300 font-semibold" data-i18n="kpiHoursSub">Automated Case Triage</span>
         </div>
       </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
         <div class="lg:col-span-7 bg-slate-800/80 border border-slate-700 rounded-2xl p-5 shadow-xl">
           <h3 class="text-sm font-bold text-white mb-2 flex items-center gap-2">
-            <i class="fa-solid fa-chart-line text-amber-400"></i> <span data-i18n="chartHeader">স্ক্যাম প্রতিরোধ বনাম সাধারণ ফ্রিকশন ট্রেড-অফ কার্ভ</span>
+            <i class="fa-solid fa-chart-line text-amber-400"></i> <span data-i18n="chartHeader">Loss Reduction vs. Friction Cost Trade-Off Curve</span>
           </h3>
-          <p class="text-xs text-slate-400 mb-4" data-i18n="chartSub">থ্রেশহোল্ড পরিবর্তনের সাথে সাথে ফ্রড প্রতিরোধ বনাম কাস্টমার বাধার গ্রাফ</p>
+          <p class="text-xs text-slate-400 mb-4" data-i18n="chartSub">Empirical frontier evaluated across threshold operating parameters</p>
           <div class="h-64">
             <canvas id="tradeoffChart"></canvas>
           </div>
@@ -301,29 +302,29 @@
         <div class="lg:col-span-5 bg-slate-800/80 border border-slate-700 rounded-2xl p-5 shadow-xl flex flex-col justify-between">
           <div>
             <h3 class="text-sm font-bold text-white mb-2 flex items-center gap-2">
-              <i class="fa-solid fa-scale-balanced text-amber-400"></i> <span data-i18n="fairnessHeader">ডেমোগ্রাফিক সমতা ও ফেয়ারনেস অডিট</span>
+              <i class="fa-solid fa-scale-balanced text-amber-400"></i> <span data-i18n="fairnessHeader">Demographic Fairness & Parity</span>
             </h3>
-            <p class="text-xs text-slate-400 mb-4" data-i18n="fairnessSub">দুর্বল শ্রেণির গ্রাহকদের জন্য প্রো-অ্যাক্টিভ সুরক্ষা কিন্তু স্থায়ী ব্লক নয়</p>
+            <p class="text-xs text-slate-400 mb-4" data-i18n="fairnessSub">Intentional protected-cohort threshold discounting without disparate harm</p>
             <div class="overflow-x-auto text-xs">
               <table class="w-full text-left">
                 <thead>
                   <tr class="border-b border-slate-700 text-slate-400">
-                    <th class="py-2" data-i18n="thCohort">গ্রাহক শ্রেণি</th>
-                    <th class="py-2" data-i18n="thRecall">ডিটেকশন রিকল</th>
-                    <th class="py-2" data-i18n="thFp">ফলস পজিটিভ</th>
+                    <th class="py-2" data-i18n="thCohort">Cohort</th>
+                    <th class="py-2" data-i18n="thRecall">Detection Recall</th>
+                    <th class="py-2" data-i18n="thFp">False Positives</th>
                   </tr>
                 </thead>
-                <tbody class="divide-y divide-slate-800">
-                  <tr><td class="py-2 font-medium" data-i18n="cohortElderly">বয়স ৬০+ (সুরক্ষিত দল)</td><td class="text-emerald-400 font-bold">92.4%</td><td>1.9%</td></tr>
-                  <tr><td class="py-2 font-medium" data-i18n="cohortYouth">বয়স ১৮-২৫</td><td class="text-emerald-400 font-bold">86.1%</td><td>1.5%</td></tr>
-                  <tr><td class="py-2 font-medium" data-i18n="cohortRural">গ্রামীণ ব্যবহারকারী</td><td class="text-emerald-400 font-bold">89.8%</td><td>1.8%</td></tr>
-                  <tr><td class="py-2 font-medium" data-i18n="cohortUrban">শহুরে ব্যবহারকারী</td><td class="text-emerald-400 font-bold">87.2%</td><td>1.7%</td></tr>
+                <tbody class="divide-y divide-slate-800 font-medium">
+                  <tr><td class="py-2" data-i18n="cohortElderly">Age 60+ (Protected)</td><td class="text-emerald-400 font-bold">92.4%</td><td>1.9%</td></tr>
+                  <tr><td class="py-2" data-i18n="cohortYouth">Age 18-25</td><td class="text-emerald-400 font-bold">86.1%</td><td>1.5%</td></tr>
+                  <tr><td class="py-2" data-i18n="cohortRural">Rural Users</td><td class="text-emerald-400 font-bold">89.8%</td><td>1.8%</td></tr>
+                  <tr><td class="py-2" data-i18n="cohortUrban">Urban Users</td><td class="text-emerald-400 font-bold">87.2%</td><td>1.7%</td></tr>
                 </tbody>
               </table>
             </div>
           </div>
           <div class="mt-4 p-3 bg-slate-900 rounded-xl border border-slate-700 text-[11px] text-slate-400" data-i18n="fairnessNote">
-            <strong class="text-amber-400">ফেয়ারনেস বাই ডিজাইন:</strong> দুর্বল শ্রেণির গ্রাহকদের জন্য প্ররোচিত সতর্কতা (L1/L2), কিন্তু কোনো অবস্থাতেই স্বয়ংক্রিয় স্থায়ী ব্লক নয়।
+            <strong class="text-amber-400">Fairness By Design:</strong> Vulnerable cohorts receive heightened proactive warnings (L1/L2) with zero permanent blocking.
           </div>
         </div>
       </div>
@@ -336,14 +337,14 @@
     <div id="toastIcon" class="text-2xl mt-0.5"></div>
     <div>
       <div id="toastTitle" class="font-bold text-sm"></div>
-      <div id="toastDesc" class="text-xs mt-0.5 opacity-90 leading-relaxed"></div>
+      <div id="toastDesc" class="text-xs mt-0.5 opacity-90 leading-relaxed font-medium"></div>
     </div>
   </div>
 
-  <footer class="border-t border-slate-800/60 px-6 py-2 text-center text-[11px] text-slate-500">
+  <footer class="border-t border-slate-800/60 px-6 py-2 text-center text-[11px] text-slate-500 font-medium">
     Upay_Guardian • Empowering Safe Digital Financial Services
   </footer>
 
-  <script src="/app.js?v=7.0"></script>
+  <script src="/app.js?v=9.0"></script>
 </body>
 </html>

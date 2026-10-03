@@ -15,36 +15,39 @@
 }
 
 /* ==========================================================
-   Fintech-Grade Premium Day Mode (Light Theme)
+   Fintech-Grade High-Contrast Day Mode (Light Theme)
    ========================================================== */
 body.theme-light {
-  background-color: #f8fafc !important;
-  color: #0f172a !important;
+  background-color: #f1f5f9 !important; /* Soft cool grey */
+  color: #090d16 !important;            /* Deep black/charcoal for highest legibility */
 }
 
-/* Header & Nav */
+/* Header & Navigation */
 body.theme-light header {
   background-color: #ffffff !important;
-  border-color: #e2e8f0 !important;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+  border-color: #cbd5e1 !important;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.08);
+}
+body.theme-light header h1 {
+  color: #d97706 !important; /* Darker vibrant amber */
 }
 
 /* Presets & Containers */
 body.theme-light section.border-2 {
   background-color: #ffffff !important;
   border-color: #f59e0b !important;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.06);
 }
 
 body.theme-light .bg-slate-900 {
   background-color: #f8fafc !important;
   color: #0f172a !important;
-  border-color: #e2e8f0 !important;
+  border-color: #cbd5e1 !important;
 }
 
 body.theme-light .bg-slate-950 {
   background-color: #ffffff !important;
-  border-color: #cbd5e1 !important;
+  border-color: #94a3b8 !important;
   color: #0f172a !important;
 }
 
@@ -52,112 +55,150 @@ body.theme-light .bg-slate-800\/90,
 body.theme-light .bg-slate-800\/80,
 body.theme-light .bg-slate-800 {
   background-color: #ffffff !important;
-  border-color: #e2e8f0 !important;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.04), 0 2px 4px -2px rgba(0, 0, 0, 0.04);
+  border-color: #cbd5e1 !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.06), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
 }
 
-/* Typography Contrast */
+/* High Contrast Deep Text Colors */
 body.theme-light .text-white {
-  color: #0f172a !important;
+  color: #090d16 !important;
+  font-weight: 700 !important;
 }
 body.theme-light .text-slate-100 {
-  color: #1e293b !important;
+  color: #0f172a !important;
+  font-weight: 600 !important;
 }
 body.theme-light .text-slate-200 {
-  color: #334155 !important;
+  color: #1e293b !important;
+  font-weight: 600 !important;
 }
 body.theme-light .text-slate-300 {
-  color: #475569 !important;
+  color: #334155 !important;
+  font-weight: 600 !important;
 }
 body.theme-light .text-slate-400 {
-  color: #64748b !important;
+  color: #475569 !important; /* Noticeably darker, easy to read */
+  font-weight: 600 !important;
 }
 
 /* Form Inputs & Textarea */
 body.theme-light input,
 body.theme-light textarea {
   background-color: #ffffff !important;
-  color: #0f172a !important;
-  border-color: #cbd5e1 !important;
-  box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.03);
+  color: #090d16 !important;
+  border-color: #94a3b8 !important;
+  font-weight: 600 !important;
+  box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.05);
 }
 body.theme-light input:focus,
 body.theme-light textarea:focus {
-  border-color: #f59e0b !important;
-  outline: none;
+  border-color: #d97706 !important;
+  outline: 2px solid #fde68a !important;
 }
 
 /* Borders */
 body.theme-light .border-slate-700,
 body.theme-light .border-slate-800 {
-  border-color: #e2e8f0 !important;
+  border-color: #cbd5e1 !important;
 }
 
 /* Preset Buttons in Light Theme */
 body.theme-light button[id^="btnScenario_"] {
   background-color: #ffffff !important;
-  border-color: #e2e8f0 !important;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.04);
+  border-color: #cbd5e1 !important;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.06);
 }
 body.theme-light button[id^="btnScenario_"]:hover {
   background-color: #f1f5f9 !important;
 }
 body.theme-light button[id^="btnScenario_"].ring-2 {
   background-color: #fef3c7 !important;
-  border-color: #f59e0b !important;
+  border-color: #d97706 !important;
+}
+body.theme-light button[id^="btnScenario_"] .text-slate-400 {
+  color: #475569 !important;
 }
 
 /* Sub-cards inside Decision Trace */
 body.theme-light .grid .bg-slate-900 {
   background-color: #f8fafc !important;
-  border-color: #e2e8f0 !important;
+  border-color: #cbd5e1 !important;
+}
+body.theme-light #traceCompositeRisk,
+body.theme-light #traceLadder,
+body.theme-light #traceTextScore,
+body.theme-light #traceGraphRisk {
+  color: #0f172a !important;
+  font-weight: 900 !important;
 }
 
 /* Rule Trace Box in Light Theme */
 body.theme-light #ruleTracesContainer {
   background-color: #fefce8 !important;
-  border-color: #fef08a !important;
-  color: #854d0e !important;
+  border-color: #fde047 !important;
+  color: #713f12 !important; /* Deep dark amber/brown for crystal clear reading */
+  font-weight: 600 !important;
 }
 
 /* SHAP reasons in Light Theme */
 body.theme-light #shapReasonsContainer .bg-slate-900 {
-  background-color: #f8fafc !important;
-  border-color: #e2e8f0 !important;
+  background-color: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
 }
 body.theme-light #shapReasonsContainer .text-white {
-  color: #0f172a !important;
+  color: #090d16 !important;
+}
+body.theme-light #shapReasonsContainer .text-amber-300 {
+  color: #b45309 !important; /* Darker amber code tag */
+  font-weight: 700 !important;
+}
+body.theme-light #shapReasonsContainer span.text-amber-400 {
+  color: #92400e !important;
+  background-color: #fef3c7 !important;
+  border-color: #fde68a !important;
 }
 
 /* Analyst Console Narrative Box */
 body.theme-light #analystNarrativeBox {
   background-color: #f8fafc !important;
-  border-color: #e2e8f0 !important;
-  color: #1e293b !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
+  font-weight: 600 !important;
 }
 
 /* Analyst Alerts List in Light Theme */
 body.theme-light #alertsQueueList .bg-slate-900 {
   background-color: #ffffff !important;
-  border-color: #e2e8f0 !important;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04);
+  border-color: #cbd5e1 !important;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
 }
 body.theme-light #alertsQueueList .bg-slate-900:hover {
   background-color: #f8fafc !important;
 }
+body.theme-light #alertsQueueList .font-mono.text-amber-400 {
+  color: #b45309 !important;
+}
 
-/* Phone Mockup Styling in Light Theme */
+/* Phone Mockup Interior */
 body.theme-light #viewCustomer .bg-slate-950 {
   background-color: #ffffff !important;
-  border-color: #cbd5e1 !important;
+  border-color: #94a3b8 !important;
 }
 body.theme-light #viewCustomer .bg-slate-900\/60 {
   background-color: #f8fafc !important;
-  border-color: #e2e8f0 !important;
+  border-color: #cbd5e1 !important;
+}
+
+/* KPI Cards in Impact Tab */
+body.theme-light #viewImpact .bg-slate-800\/80 {
+  background-color: #ffffff !important;
+  border-color: #cbd5e1 !important;
 }
 
 /* Footer */
 body.theme-light footer {
-  border-color: #e2e8f0 !important;
-  color: #94a3b8 !important;
+  border-color: #cbd5e1 !important;
+  color: #64748b !important;
+  font-weight: 600 !important;
 }
