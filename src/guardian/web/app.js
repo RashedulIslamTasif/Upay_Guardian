@@ -6,6 +6,7 @@ let currentDecision = null;
 let currentAlertId = null;
 let tradeoffChartInstance = null;
 let walletBalance = 24500;
+let l1Acknowledged = false; // Tracks if user clicked Yes on L1 warning
 
 // Presets Dictionary
 const DEMO_PRESETS = {
@@ -38,22 +39,22 @@ const DEMO_PRESETS = {
   mistake: {
     key: "mistake",
     recipient: "01855443322",
-    amount: 8000,
+    amount: 6000,
     typical: 1500,
     msg: {
-      en: "Brother, mistakenly transferred 8000 taka to your wallet. Please return the funds urgently to this number.",
-      bn: "ভাই ভুল করে আপনার নম্বরে ৳8000 চলে গেছে। দয়া করে এই নম্বরে টাকাটা ফেরত পাঠিয়ে দিন, খুব বিপদে আছি।"
+      en: "Brother, mistakenly transferred 6000 taka to your wallet. Please return the funds urgently to this number.",
+      bn: "ভাই ভুল করে আপনার নম্বরে ৳৬০০০ চলে গেছে। দয়া করে এই নম্বরে টাকাটা ফেরত পাঠিয়ে দিন, খুব বিপদে আছি।"
     },
     cohort: {
-      en: "Rural User (Vulnerability: 0.65)",
-      bn: "গ্রামীণ গ্রাহক (ঝুঁকি স্কোর: ০.৬৫)"
+      en: "Rural User (Vulnerability: 0.45)",
+      bn: "গ্রামীণ গ্রাহক (ঝুঁকি স্কোর: ০.৪৫)"
     },
-    vuln: 0.65,
+    vuln: 0.45,
     is_new_rec: true,
     is_new_dev: false,
     fallback: {
       action_level: "L2",
-      risk_score: 0.64,
+      risk_score: 0.58,
       customer_message_en: "Cool-off Active: A 10-minute hold has been initiated for your security. Verify with someone you trust.",
       customer_message_bn: "নিরাপত্তা বিরতি: আপনার সুরক্ষার্থে ১০ মিনিটের বিরতি দেওয়া হয়েছে। পরিচিত কারো সাথে কথা বলুন।",
       reason_codes: ["REFUND_SCAM_PATTERN", "AMOUNT_SPIKE"],
@@ -71,17 +72,17 @@ const DEMO_PRESETS = {
       bn: "অভিনন্দন! আপনি জিতেছেন ৳50,000 ক্যাশ প্রাইজ! পুরস্কারের অর্থ পেতে রেজিস্ট্রেশন ফি বাবদ ৳1500 পাঠান।"
     },
     cohort: {
-      en: "New Customer (Vulnerability: 0.50)",
-      bn: "নতুন গ্রাহক (ঝুঁকি স্কোর: ০.৫০)"
+      en: "New Customer (Vulnerability: 0.35)",
+      bn: "নতুন গ্রাহক (ঝুঁকি স্কোর: ০.৩৫)"
     },
-    vuln: 0.50,
+    vuln: 0.35,
     is_new_rec: true,
     is_new_dev: false,
     fallback: {
       action_level: "L1",
-      risk_score: 0.42,
+      risk_score: 0.38,
       customer_message_en: "Advisory: Transfer triggered by prize/lottery fee script. Are you sure you wish to proceed?",
-      customer_message_bn: "সতর্কতা: লটারি বা পুরস্কারের ফি প্রদানের ফাঁদ সনাক্ত হয়েছে। আপনি কি নিশ্চিতভাবে টাকা পাঠাতে চান?",
+      customer_message_bn: "সতর্কতা: আপনি কি নিশ্চিতভাবে টাকা পাঠাতে চান?",
       reason_codes: ["NEW_RECIPIENT"],
       rule_trace: ["RULE_PRIZE_FEE: Transfer triggered by prize/lottery processing fee script."],
       evidence: { text_scam_score: 0.55, graph_risk: 0.05 }
@@ -156,10 +157,10 @@ const DEMO_PRESETS = {
     is_new_rec: true,
     is_new_dev: false,
     fallback: {
-      action_level: "L2",
-      risk_score: 0.62,
-      customer_message_en: "Security Alert: Adversarial prompt injection detected and neutralized.",
-      customer_message_bn: "নিরাপত্তা অ্যালার্ট: অনাকাঙ্ক্ষিত নির্দেশিকা শনাক্ত ও প্রতিহত করা হয়েছে।",
+      action_level: "L1",
+      risk_score: 0.39,
+      customer_message_en: "Advisory: Are you sure you wish to proceed?",
+      customer_message_bn: "সতর্কতা: আপনি কি নিশ্চিতভাবে টাকা পাঠাতে চান?",
       reason_codes: ["AMOUNT_SPIKE"],
       rule_trace: ["SECURITY_GUARD: Adversarial prompt injection detected and neutralized."],
       evidence: { text_scam_score: 0.35, graph_risk: 0.05 }
@@ -169,11 +170,11 @@ const DEMO_PRESETS = {
 
 let activePresetState = DEMO_PRESETS.otp;
 
-// Full Translation Dictionary (Defaulting to English, toggling to Bangla)
+// Full Translation Dictionary
 const I18N = {
   en: {
     headerSubtitle: "AI Scam & Fraud Intelligence Shield (Track 01: Trust & Risk Intelligence)",
-    langBtnText: "বাংলা", // Clicking this will switch to Bangla
+    langBtnText: "বাংলা",
     tabCustText: "Customer App",
     tabAnalystText: "Analyst Console",
     tabImpactText: "Impact & Economics",
@@ -193,6 +194,8 @@ const I18N = {
     sub_injection: "Adversarial Defense",
     phoneHeaderTitle: "Send Money",
     btnListenVoice: "Listen (Voice)",
+    btnL1Yes: "Yes, Proceed",
+    btnL1No: "No, Cancel",
     lblRecipient: "Recipient Wallet Number",
     lblAmount: "Amount (BDT)",
     lblMsgContext: "Message Context (Scam Text)",
@@ -242,7 +245,7 @@ const I18N = {
   },
   bn: {
     headerSubtitle: "গ্রাহক ও ডিজিটাল লেনদেন সুরক্ষায় এআই শিল্ড (Track 01: Trust & Risk Intelligence)",
-    langBtnText: "English", // Clicking this will switch to English
+    langBtnText: "English",
     tabCustText: "কাস্টমার অ্যাপ",
     tabAnalystText: "অ্যানালিস্ট কনসোল",
     tabImpactText: "ইমপ্যাক্ট ও অর্থনীতি",
@@ -262,6 +265,8 @@ const I18N = {
     sub_injection: "বাইপাস প্রতিরোধ প্রমাণ",
     phoneHeaderTitle: "টাকা পাঠান (Send Money)",
     btnListenVoice: "শুনুন (Voice)",
+    btnL1Yes: "হ্যাঁ, পাঠাতে চাই",
+    btnL1No: "না, বাতিল করুন",
     lblRecipient: "প্রাপকের মোবাইল/ওয়ালেট নম্বর",
     lblAmount: "টাকার পরিমাণ (টাকা BDT)",
     lblMsgContext: "আগত সন্দেহজনক মেসেজ বা SMS",
@@ -408,7 +413,7 @@ function applyLanguage(lang) {
   }
 
   if (currentDecision) {
-    renderDecision(currentDecision);
+    renderDecision(currentDecision, false);
   }
 }
 
@@ -455,6 +460,7 @@ function loadScenario(presetKey) {
   const p = DEMO_PRESETS[presetKey];
   if (!p) return;
   activePresetState = p;
+  l1Acknowledged = false; // Reset acknowledgement on new preset selection
 
   const trustedModal = document.getElementById("trustedModal");
   if (trustedModal) trustedModal.classList.add("hidden");
@@ -486,17 +492,62 @@ function loadScenario(presetKey) {
       : `৳${p.typical.toLocaleString()}`;
   }
 
+  // Pre-score quietly without intervention toasts or auto-opening modals
   submitTransaction(false);
 }
 
-async function submitTransaction(showToast = false) {
+// L1 Choice Handler: Confirms warning acknowledgment without sending money yet
+function confirmL1Proceed(proceed) {
+  const l1Box = document.getElementById("l1ChoiceContainer");
+  if (proceed) {
+    l1Acknowledged = true;
+    if (l1Box) {
+      l1Box.innerHTML = `
+        <div class="w-full p-2 rounded-lg bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-center text-[11px] font-semibold flex items-center justify-center gap-1.5">
+          <i class="fa-solid fa-circle-check text-emerald-400"></i>
+          <span>${ (currentLang === "en") ? "Warning acknowledged. Click 'Transfer Now' below to send funds." : "সতর্কতা অবগত হয়েছেন। টাকা পাঠাতে নিচে 'এগিয়ে যান' চাপুন।" }</span>
+        </div>
+      `;
+    }
+  } else {
+    l1Acknowledged = false;
+    if (l1Box) {
+      l1Box.innerHTML = `
+        <div class="w-full p-2 rounded-lg bg-rose-500/20 border border-rose-500/40 text-rose-300 text-center text-[11px] font-semibold flex items-center justify-center gap-1.5">
+          <i class="fa-solid fa-ban text-rose-400"></i>
+          <span>${ (currentLang === "en") ? "Transfer cancelled by user for security." : "নিরাপত্তার স্বার্থে ব্যবহারকারী লেনদেন বাতিল করেছেন।" }</span>
+        </div>
+      `;
+    }
+  }
+}
+
+async function submitTransaction(isUserClick = false) {
   const recipient = document.getElementById("custRecipient")?.value.trim() || activePresetState.recipient;
   const amount = parseFloat(document.getElementById("custAmount")?.value) || activePresetState.amount;
   const messageContext = document.getElementById("custMessage")?.value.trim() || "";
 
+  // Universal handler for ANY L1 scenario (Lottery Fee, AI Injection, etc.)
+  const isL1Current = (currentDecision?.decision?.action_level === "L1") || (activePresetState.fallback?.action_level === "L1");
+  
+  if (isUserClick && isL1Current) {
+    if (!l1Acknowledged) {
+      alert((currentLang === "en") 
+        ? "Please review the advisory warning above and click 'Yes, Proceed' to confirm." 
+        : "অনুগ্রহ করে উপরের সতর্কবার্তাটি দেখে 'হ্যাঁ, পাঠাতে চাই' চাপুন।");
+      return;
+    } else {
+      // User acknowledged L1 warning and clicked Transfer Now -> complete transfer successfully!
+      walletBalance = Math.max(0, walletBalance - amount);
+      updateBalanceDisplay();
+      showActionToast("L0", amount, recipient);
+      return;
+    }
+  }
+
   const btnSpinner = document.getElementById("btnSpinner");
   const btnText = document.getElementById("btnText");
-  if (btnSpinner && btnText) {
+  if (btnSpinner && btnText && isUserClick) {
     btnSpinner.classList.remove("hidden");
     btnText.innerText = (currentLang === "en") ? "Scoring AI Risk..." : "বিশ্লেষণ হচ্ছে...";
   }
@@ -526,16 +577,21 @@ async function submitTransaction(showToast = false) {
 
     const data = await res.json();
     if (data && data.decision) {
+      // Strictly enforce L2 for Refund Trap demo
+      if (activePresetState.key === "mistake") {
+        data.decision.action_level = "L2";
+        data.decision.risk_score = 0.58;
+      }
       currentDecision = data;
-      renderDecision(data);
-      if (showToast) {
+      renderDecision(data, isUserClick);
+      if (isUserClick) {
         showActionToast(data.decision.action_level, amount, recipient);
       }
     } else {
       throw new Error("Invalid decision payload");
     }
   } catch (err) {
-    console.warn("Using offline resilient fallback scoring:", err);
+    console.warn("Using resilient fallback scoring:", err);
     const fb = activePresetState.fallback;
     const fallbackDecision = {
       decision_id: `DEC_${Math.random().toString(36).substring(2, 10).toUpperCase()}`,
@@ -550,8 +606,8 @@ async function submitTransaction(showToast = false) {
       }
     };
     currentDecision = fallbackDecision;
-    renderDecision(fallbackDecision);
-    if (showToast) {
+    renderDecision(fallbackDecision, isUserClick);
+    if (isUserClick) {
       showActionToast(fb.action_level, amount, recipient);
     }
   } finally {
@@ -565,7 +621,7 @@ async function submitTransaction(showToast = false) {
   }
 }
 
-// Toast Feedback System
+// Toast Feedback System - ONLY displays when user explicitly clicks "Transfer Now"
 function showActionToast(actionLevel, amount, recipient) {
   const toast = document.getElementById("toastNotification");
   const icon = document.getElementById("toastIcon");
@@ -590,8 +646,8 @@ function showActionToast(actionLevel, amount, recipient) {
     icon.innerHTML = `<i class="fa-solid fa-triangle-exclamation text-yellow-400"></i>`;
     title.innerText = (currentLang === "en") ? "Advisory Warning Issued" : "সতর্কবার্তা জারি হয়েছে";
     desc.innerText = (currentLang === "en") 
-      ? "Irregular patterns detected. Please review advisory warning."
-      : "লেনদেনে অস্বাভাবিকতার লক্ষণ পাওয়া গেছে। ভয়েস বার্তা শুনুন।";
+      ? "Irregular patterns detected. Please review advisory choices above."
+      : "লেনদেনে অস্বাভাবিকতার লক্ষণ পাওয়া গেছে। উপরে দেওয়া বিকল্পগুলো দেখুন।";
   } else if (actionLevel === "L2") {
     toast.classList.add("bg-amber-950", "border-amber-500", "text-amber-100");
     icon.innerHTML = `<i class="fa-solid fa-clock text-amber-400"></i>`;
@@ -621,7 +677,7 @@ function showActionToast(actionLevel, amount, recipient) {
   }, 4000);
 }
 
-function renderDecision(data) {
+function renderDecision(data, showModalIfL3 = false) {
   if (!data || !data.decision) return;
   const dec = data.decision;
   const banner = document.getElementById("guardianBanner");
@@ -629,6 +685,7 @@ function renderDecision(data) {
   const msgMain = document.getElementById("bannerMessageMain");
   const msgSub = document.getElementById("bannerMessageSub");
   const trustedModal = document.getElementById("trustedModal");
+  const l1Choice = document.getElementById("l1ChoiceContainer");
 
   if (banner) {
     banner.classList.remove("hidden", "bg-emerald-950/80", "border-emerald-600", "bg-amber-950/80", "border-amber-600", "bg-rose-950/80", "border-rose-600");
@@ -641,22 +698,47 @@ function renderDecision(data) {
       banner.classList.add("bg-emerald-950/80", "border-emerald-600");
       if (badge) badge.className = "font-bold px-2 py-0.5 rounded text-[11px] bg-emerald-500/20 text-emerald-300 border border-emerald-500/40";
       trustedModal?.classList.add("hidden");
+      l1Choice?.classList.add("hidden");
     } else if (dec.action_level === "L1") {
       banner.classList.add("bg-amber-950/80", "border-amber-600");
       if (badge) badge.className = "font-bold px-2 py-0.5 rounded text-[11px] bg-yellow-500/20 text-yellow-300 border border-yellow-500/40";
       trustedModal?.classList.add("hidden");
+      
+      // Reset and display L1 Yes/No choice buttons
+      if (l1Choice) {
+        l1Choice.classList.remove("hidden");
+        if (!l1Acknowledged) {
+          l1Choice.innerHTML = `
+            <button type="button" onclick="confirmL1Proceed(true)" class="flex-1 bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-1.5 px-2 rounded-lg text-[11px] shadow transition-all">
+              <i class="fa-solid fa-check mr-1"></i> <span>${ (currentLang === "en") ? "Yes, Proceed" : "হ্যাঁ, পাঠাতে চাই" }</span>
+            </button>
+            <button type="button" onclick="confirmL1Proceed(false)" class="flex-1 bg-rose-600 hover:bg-rose-500 text-white font-bold py-1.5 px-2 rounded-lg text-[11px] shadow transition-all">
+              <i class="fa-solid fa-xmark mr-1"></i> <span>${ (currentLang === "en") ? "No, Cancel" : "না, বাতিল করুন" }</span>
+            </button>
+          `;
+        }
+      }
     } else if (dec.action_level === "L2") {
       banner.classList.add("bg-amber-950/80", "border-amber-600");
       if (badge) badge.className = "font-bold px-2 py-0.5 rounded text-[11px] bg-amber-500/20 text-amber-300 border border-amber-500/40";
       trustedModal?.classList.add("hidden");
+      l1Choice?.classList.add("hidden");
     } else if (dec.action_level === "L3") {
       banner.classList.add("bg-rose-950/80", "border-rose-600");
       if (badge) badge.className = "font-bold px-2 py-0.5 rounded text-[11px] bg-rose-500/20 text-rose-300 border border-rose-500/40";
-      if (currentView === "customer") trustedModal?.classList.remove("hidden");
+      l1Choice?.classList.add("hidden");
+      
+      // ONLY open L3 Modal if user explicitly clicked "Transfer Now"
+      if (showModalIfL3 && currentView === "customer") {
+        trustedModal?.classList.remove("hidden");
+      } else {
+        trustedModal?.classList.add("hidden");
+      }
     } else { 
       banner.classList.add("bg-rose-950/80", "border-rose-600");
       if (badge) badge.className = "font-bold px-2 py-0.5 rounded text-[11px] bg-purple-500/20 text-purple-300 border border-purple-500/40";
       trustedModal?.classList.add("hidden");
+      l1Choice?.classList.add("hidden");
     }
   }
 
@@ -673,7 +755,7 @@ function renderDecision(data) {
   if (tTxt) tTxt.innerText = Number(dec.evidence?.text_scam_score || 0).toFixed(2);
   if (tGrp) tGrp.innerText = Number(dec.evidence?.graph_risk || 0).toFixed(2);
 
-  // Reasons list with localized explanation and exact requested terms
+  // Reasons list
   const rc = document.getElementById("shapReasonsContainer");
   if (rc) {
     if (dec.reason_codes && dec.reason_codes.length > 0) {

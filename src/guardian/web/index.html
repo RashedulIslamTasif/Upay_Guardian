@@ -7,7 +7,7 @@
   <title>Upay_Guardian</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <link rel="stylesheet" href="/styles.css?v=9.0">
+  <link rel="stylesheet" href="/styles.css?v=10.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body id="appBody" class="bg-slate-900 text-slate-100 min-h-screen flex flex-col font-sans notranslate transition-colors duration-200" translate="no">
@@ -32,7 +32,7 @@
         <span id="themeBtnIcon">☀️</span> <span id="themeBtnText">Day</span>
       </button>
 
-      <!-- Language Switcher Button (Defaults to inviting Bangla toggle) -->
+      <!-- Language Switcher Button -->
       <button id="langToggleBtn" onclick="toggleLanguage()" class="px-3.5 py-1.5 rounded-lg border-2 border-amber-400 bg-amber-400/10 hover:bg-amber-400/20 text-amber-300 text-xs font-black flex items-center gap-2 transition-all shadow">
         <i class="fa-solid fa-language text-base"></i> <span id="langBtnText">বাংলা</span>
       </button>
@@ -116,6 +116,16 @@
             </div>
             <p id="bannerMessageMain" class="font-medium text-slate-100 mt-1 leading-relaxed text-[12px]"></p>
             <p id="bannerMessageSub" class="text-[10px] text-slate-400 italic mt-0.5"></p>
+
+            <!-- L1 Advisory Action Choice (Yes / No Buttons) -->
+            <div id="l1ChoiceContainer" class="hidden mt-2.5 pt-2 border-t border-yellow-500/30 flex items-center gap-2">
+              <button type="button" onclick="confirmL1Proceed(true)" class="flex-1 bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-1.5 px-2 rounded-lg text-[11px] shadow transition-all">
+                <i class="fa-solid fa-check mr-1"></i> <span data-i18n="btnL1Yes">Yes, Proceed</span>
+              </button>
+              <button type="button" onclick="confirmL1Proceed(false)" class="flex-1 bg-rose-600 hover:bg-rose-500 text-white font-bold py-1.5 px-2 rounded-lg text-[11px] shadow transition-all">
+                <i class="fa-solid fa-xmark mr-1"></i> <span data-i18n="btnL1No">No, Cancel</span>
+              </button>
+            </div>
           </div>
 
           <form id="txnForm" onsubmit="event.preventDefault(); submitTransaction(true);" class="mt-4 space-y-3">
@@ -164,10 +174,10 @@
             <h3 class="text-sm font-bold text-white mb-1" data-i18n="modalTitle">Trusted Contact Co-Approval Required (L3)</h3>
             <p class="text-xs text-slate-300 mb-4 px-2" data-i18n="modalDesc">For your account security, this transaction requires authorization from your registered guardian/trusted contact.</p>
             <div class="w-full space-y-2">
-              <button onclick="resolveTrustedContact('approve')" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-2 rounded-lg text-xs" data-i18n="btnModalApprove">
+              <button type="button" onclick="resolveTrustedContact('approve')" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-2 rounded-lg text-xs" data-i18n="btnModalApprove">
                 <i class="fa-solid fa-check mr-1"></i> Guardian Approve (Simulate)
               </button>
-              <button onclick="resolveTrustedContact('deny')" class="w-full bg-rose-600 hover:bg-rose-500 text-white font-bold py-2 rounded-lg text-xs" data-i18n="btnModalReject">
+              <button type="button" onclick="resolveTrustedContact('deny')" class="w-full bg-rose-600 hover:bg-rose-500 text-white font-bold py-2 rounded-lg text-xs" data-i18n="btnModalReject">
                 <i class="fa-solid fa-ban mr-1"></i> Reject Transfer (Simulate)
               </button>
             </div>
@@ -315,10 +325,10 @@
                   </tr>
                 </thead>
                 <tbody class="divide-y divide-slate-800 font-medium">
-                  <tr><td class="py-2" data-i18n="cohortElderly">Age 60+ (Protected)</td><td class="text-emerald-400 font-bold">92.4%</td><td>1.9%</td></tr>
-                  <tr><td class="py-2" data-i18n="cohortYouth">Age 18-25</td><td class="text-emerald-400 font-bold">86.1%</td><td>1.5%</td></tr>
-                  <tr><td class="py-2" data-i18n="cohortRural">Rural Users</td><td class="text-emerald-400 font-bold">89.8%</td><td>1.8%</td></tr>
-                  <tr><td class="py-2" data-i18n="cohortUrban">Urban Users</td><td class="text-emerald-400 font-bold">87.2%</td><td>1.7%</td></tr>
+                  <tr><td class="py-2 font-medium" data-i18n="cohortElderly">Age 60+ (Protected)</td><td class="text-emerald-400 font-bold">92.4%</td><td>1.9%</td></tr>
+                  <tr><td class="py-2 font-medium" data-i18n="cohortYouth">Age 18-25</td><td class="text-emerald-400 font-bold">86.1%</td><td>1.5%</td></tr>
+                  <tr><td class="py-2 font-medium" data-i18n="cohortRural">Rural Users</td><td class="text-emerald-400 font-bold">89.8%</td><td>1.8%</td></tr>
+                  <tr><td class="py-2 font-medium" data-i18n="cohortUrban">Urban Users</td><td class="text-emerald-400 font-bold">87.2%</td><td>1.7%</td></tr>
                 </tbody>
               </table>
             </div>
@@ -345,6 +355,6 @@
     Upay_Guardian • Empowering Safe Digital Financial Services
   </footer>
 
-  <script src="/app.js?v=9.0"></script>
+  <script src="/app.js?v=10.0"></script>
 </body>
 </html>
