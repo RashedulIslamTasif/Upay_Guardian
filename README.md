@@ -14,7 +14,6 @@ _Organized by DIU Computer and Programming Club (DIU-CPC) × upay_
 [![LightGBM](https://img.shields.io/badge/LightGBM-4.3+-brightgreen.svg)](https://lightgbm.readthedocs.io/)
 [![Zero PII](https://img.shields.io/badge/Privacy-100%25%20Synthetic-emerald.svg)](docs/SYNTHETIC_ASSUMPTIONS.md)
 [![Security Audit](https://img.shields.io/badge/Adversarial%20Audit-100%25%20Neutralized-purple.svg)](data/security_audit.json)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 [Overview](#-project-overview) •
 [Features](#-features--role-of-ai) •
