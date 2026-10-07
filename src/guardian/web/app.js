@@ -6,7 +6,7 @@ let currentDecision = null;
 let currentAlertId = null;
 let tradeoffChartInstance = null;
 let walletBalance = 24500;
-let l1Acknowledged = false; // Tracks if user clicked Yes on L1 warning
+let l1Acknowledged = false; // Tracks if user confirmed L1 advisory
 
 // Presets Dictionary
 const DEMO_PRESETS = {
@@ -157,10 +157,10 @@ const DEMO_PRESETS = {
     is_new_rec: true,
     is_new_dev: false,
     fallback: {
-      action_level: "L1",
-      risk_score: 0.39,
-      customer_message_en: "Advisory: Are you sure you wish to proceed?",
-      customer_message_bn: "সতর্কতা: আপনি কি নিশ্চিতভাবে টাকা পাঠাতে চান?",
+      action_level: "L2",
+      risk_score: 0.62,
+      customer_message_en: "Security Alert: Adversarial prompt injection detected and neutralized. 10-Minute Hold Active.",
+      customer_message_bn: "নিরাপত্তা অ্যালার্ট: অনাকাঙ্ক্ষিত নির্দেশিকা শনাক্ত ও প্রতিহত করা হয়েছে। ১০ মিনিটের বিরতি সক্রিয়।",
       reason_codes: ["AMOUNT_SPIKE"],
       rule_trace: ["SECURITY_GUARD: Adversarial prompt injection detected and neutralized."],
       evidence: { text_scam_score: 0.35, graph_risk: 0.05 }
@@ -1068,7 +1068,22 @@ async function loadImpactMetrics() {
     if (hs) hs.innerText = `${g.analyst_hours_saved} hrs`;
 
     renderTradeoffChart(d.business_simulation.tradeoff_curve);
+
+    // Fetch and dynamically render the REAL Model Benchmark Matrix
+    const bRes = await fetch("/v1/metrics/benchmarks");
+    if (bRes.ok) {
+      const bData = await bRes.json();
+      renderBenchmarkTable(bData);
+    }
+
+    // Fetch and dynamically render the REAL Security Audit Table
+    const sRes = await fetch("/v1/metrics/security");
+    if (sRes.ok) {
+      const sData = await sRes.json();
+      renderSecurityTable(sData);
+    }
   } catch (err) {
+    console.warn("Using fallback cached metrics:", err);
     renderTradeoffChart([
       { threshold: 0.2, loss_reduction_pct: 92, legit_friction_rate_pct: 4.1 },
       { threshold: 0.35, loss_reduction_pct: 88, legit_friction_rate_pct: 2.5 },
@@ -1077,6 +1092,49 @@ async function loadImpactMetrics() {
       { threshold: 0.8, loss_reduction_pct: 54, legit_friction_rate_pct: 0.4 }
     ]);
   }
+}
+
+function renderBenchmarkTable(benchmarks) {
+  const tbody = document.getElementById("benchmarkTableBody");
+  if (!tbody || !benchmarks) return;
+
+  tbody.innerHTML = benchmarks.map(b => {
+    const isWinner = b.model_name.includes("LightGBM");
+    const rowClass = isWinner ? "bg-amber-500/10 border-amber-500/30 font-bold" : "";
+    const nameClass = isWinner ? "text-amber-400 font-bold" : "text-white";
+    const prClass = isWinner ? "text-emerald-400 font-bold" : "text-slate-200";
+
+    return `
+      <tr class="${rowClass}">
+        <td class="py-2.5 ${nameClass}">${b.model_name}</td>
+        <td class="py-2.5 text-slate-300">${b.family}</td>
+        <td class="py-2.5 ${prClass}">${Number(b.pr_auc).toFixed(4)}</td>
+        <td class="py-2.5 text-slate-300">${Number(b.roc_auc).toFixed(4)}</td>
+        <td class="py-2.5 text-slate-300">${Number(b.f1_score).toFixed(4)}</td>
+        <td class="py-2.5 text-emerald-400 font-mono">${Number(b.latency_ms).toFixed(2)} ms</td>
+        <td class="py-2.5 text-slate-400 text-[11px]">${b.rationale}</td>
+      </tr>
+    `;
+  }).join("");
+}
+
+function renderSecurityTable(secData) {
+  const tbody = document.getElementById("securityAuditTableBody");
+  if (!tbody || !secData || !secData.detailed_audit) return;
+
+  tbody.innerHTML = secData.detailed_audit.map(item => `
+    <tr>
+      <td class="py-2 font-mono text-purple-300 font-bold">${item.attack_id}</td>
+      <td class="py-2 text-white">${item.category}</td>
+      <td class="py-2 font-mono text-amber-300 font-semibold">${item.defense_triggered}</td>
+      <td class="py-2 font-mono text-slate-400">${item.latency_ms.toFixed(2)} ms</td>
+      <td class="py-2">
+        <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
+          ${item.status}
+        </span>
+      </td>
+    </tr>
+  `).join("");
 }
 
 function renderTradeoffChart(curveData) {
